@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reveal.js Slides Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#editing" class="nav-link">Editing</a></li>
+<li><a href="../main.html#hosting" class="nav-link">Hosting</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">Creating and Managing Reveal.js Slides</h1>
+
+<div class="topic-content">
+
+<h2 id="editing">Edit Your Slides</h2>
+
+<p>Slides are written in <strong>slides.md</strong> using Markdown. Use <strong>---</strong> to separate horizontal slides, and <strong>--</strong> for vertical slides:</p>
+
+<pre><code class="language-markdown"># Welcome
+
+---
+
+## Slide 1
+
+Some text
+
+---
+
+- Vertical slide 1
+
+---
+
+- Vertical slide 2
+</code></pre>
+
+<h2>Customizing Theme</h2>
+
+<p>Reveal.js themes are in the <strong>dist/theme</strong> folder. To change the theme, edit <strong>index.html</strong> and modify this line:</p>
+
+<pre><code class="language-html">&lt;link rel="stylesheet" href="dist/theme/black.css" id="theme"&gt;
+</code></pre>
+
+<p>You can try other themes like <strong>white.css</strong>, <strong>night.css</strong>, <strong>moon.css</strong>, etc.</p>
+
+<h2>Transition Between Slides</h2>
+
+<h3>Option 1: Set Globally in the Reveal Configuration (index.html)</h3>
+
+<pre><code class="language-html">&lt;script&gt;
+  Reveal.initialize({
+    transition: 'fade', // or 'slide', 'convex', 'concave', 'zoom', 'none'
+    transitionSpeed: 'default' // 'fast', 'slow', or 'default'
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h3>Option 2: Per Slide with <strong>data-transition</strong> in Markdown</h3>
+
+<pre><code class="language-html">&lt;!-- .slide: data-transition="zoom" --&gt;
+</code></pre>
+
+<p>Or for vertical slides:</p>
+
+<pre><code class="language-html">&lt;!-- .slide: data-transition="fade-in slide-out" --&gt;
+</code></pre>
+
+<h2>Change Markdown File</h2>
+
+<p>Create a folder called <strong>Presentations</strong> to store all Markdown files for your presentations. To change the presentation:</p>
+
+<ul>
+<li>Open <strong>index.html</strong></li>
+<li>Find: <code>data-markdown="slides.md"</code></li>
+<li>Change it to: <code>data-markdown="Presentations/notes.md"</code></li>
+</ul>
+
+<p>The slides from <strong>notes.md</strong> will now appear.</p>
+
+<h2>Load Slides Locally</h2>
+
+<p>Open a terminal inside your folder:</p>
+
+<pre><code class="language-bash">npm install
+npm start
+</code></pre>
+
+<p>Open your browser at <code>http://localhost:8000</code> to view your slides.</p>
+
+<h2>Hosting Slides on GitHub Pages</h2>
+
+<p>To publish online for free using GitHub Pages:</p>
+
+<ol>
+<li>Ensure your repo includes: <strong>index.html</strong>, <strong>slides.md</strong>, <strong>dist/</strong> and <strong>plugin/</strong> folders, and an empty <strong>.nojekyll</strong> file.</li>
+<li>Go to GitHub repository → Settings → Pages</li>
+<li>Set Source to branch <strong>main</strong>, folder <strong>/</strong>, then Save</li>
+<li>Wait a few minutes. Your site will appear as: <code>https://your-username.github.io/repo-name/</code></li>
+</ol>
+
+<h2>If the Green Message Does NOT Appear</h2>
+
+<ul>
+<li>Add an empty <strong>.nojekyll</strong> file</li>
+<li>Commit to trigger rebuild:
+<pre><code class="language-bash">git commit --allow-empty -m "Trigger rebuild"
+git push
+</code></pre>
+</li>
+<li>Visit your slides in the browser</li>
+</ul>
+
+<h2>Public vs Private Repos and Sharing Slides</h2>
+
+<h3>Option 1: GitHub Pages (Public Repo)</h3>
+<p>Slides will be hosted at: <code>https://your-username.github.io/repo-name/</code>. Recommended method.</p>
+
+<h3>Option 2: GitHub Pages (Private Repo)</h3>
+<p>Private repos will not build on GitHub Pages unless on Enterprise plan.</p>
+
+<h3>Option 3: Export to PDF</h3>
+
+<pre><code class="language-bash">npm install -g decktape
+decktape reveal http://localhost:8000 slides.pdf
+</code></pre>
+
+<h2>Managing Large Files with Git LFS</h2>
+
+<p>For large media files (.mp4, .pdf), use Git Large File Storage (LFS) instead of committing directly.</p>
+
+<h3>Install Git LFS</h3>
+
+<p><strong>Ubuntu/Debian:</strong></p>
+<pre><code class="language-bash">sudo apt install git-lfs
+</code></pre>
+
+<p><strong>Windows:</strong> Download from <a href="https://git-lfs.com/">git-lfs.com</a></p>
+
+<h3>Set Up Git LFS in Your Repo</h3>
+
+<pre><code class="language-bash">git lfs install
+git lfs track "*.mp4"
+git lfs track "*.pdf"
+git add .gitattributes
+git add media/my-video.mp4
+git commit -m "Add video using Git LFS"
+git push
+</code></pre>
+
+<p>Notes:</p>
+<ul>
+<li>GitHub LFS free plan: 1 GB storage, 1 GB/month bandwidth</li>
+<li>View tracked files: <code>git lfs ls-files</code></li>
+</ul>
+
+<p>Alternatively, upload media externally (Google Drive, web server) and link in slides.</p>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

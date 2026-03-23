@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extra</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+  <div class="shape shape-circle"></div>
+  <div class="shape shape-triangle"></div>
+  <div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../main.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 40 40">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF5E00"/>
+            <stop offset="100%" style="stop-color:#00B2FF"/>
+          </linearGradient>
+        </defs>
+        <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+        <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+      </svg>
+      <span class="logo-text">Guidelines</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../main.html" class="nav-link">Home</a></li>
+      <li><a href="../main.html#template" class="nav-link">Template</a></li>
+      <li><a href="../main.html#workflow" class="nav-link">Workflow</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="topics">
+
+<h1 class="section-title">Extra Sites</h1>
+
+<div class="topics-grid">
+
+  <!-- Inline CSS for icon + title layout -->
+  <style>
+    .topic-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .topic-icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .topic-title {
+      margin: 0;
+      font-size: 1.4em;
+    }
+  </style>
+
+  <a class="topic-card" href="https://www.docker.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/docker.svg" alt="Docker Icon">
+      <h3 class="topic-title">Docker</h3>
+    </div>
+    <p>Platform to build, ship, and run applications in containers.</p>
+  </a>
+
+  <a class="topic-card" href="https://learn-anything.xyz/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=learn-anything.xyz&sz=128">
+      <h3 class="topic-title">Learn Anything</h3>
+    </div>
+    <p>Interactive roadmap for learning any topic.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.connectedpapers.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=connectedpapers.com&sz=128">
+      <h3 class="topic-title">Connected Papers</h3>
+    </div>
+    <p>Visualize research papers and their connections.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.odoo.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=odoo.com&sz=128">
+      <h3 class="topic-title">Odoo</h3>
+    </div>
+    <p>All-in-one business management software.</p>
+  </a>
+
+  <a class="topic-card" href="https://oklch.com/#0.7676,0.1061,211.76,100" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=oklch.com&sz=128">
+      <h3 class="topic-title">OKLCH Picker</h3>
+    </div>
+    <p>Advanced color picker using OKLCH color space.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.gurobi.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=gurobi.com&sz=128">
+      <h3 class="topic-title">Gurobi</h3>
+    </div>
+    <p>Optimization solver for mathematical programming.</p>
+  </a>
+
+  <a class="topic-card" href="https://visualpde.com/explore" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=visualpde.com&sz=128">
+      <h3 class="topic-title">VisualPDE</h3>
+    </div>
+    <p>Interactive simulations of partial differential equations.</p>
+  </a>
+
+  <a class="topic-card" href="https://animejs.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=animejs.com&sz=128">
+      <h3 class="topic-title">Anime.js</h3>
+    </div>
+    <p>Lightweight JavaScript animation library.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.sci-hub.in/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=sci-hub.in&sz=128">
+      <h3 class="topic-title">Sci-Hub</h3>
+    </div>
+    <p>Access scientific papers (availability varies).</p>
+  </a>
+
+  <a class="topic-card" href="https://libgen.mx/s?q=&type=all" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=libgen.mx&sz=128">
+      <h3 class="topic-title">LibGen</h3>
+    </div>
+    <p>Library database for books and academic content.</p>
+  </a>
+
+  <a class="topic-card" href="https://openlibrary.org/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=openlibrary.org&sz=128">
+      <h3 class="topic-title">Open Library</h3>
+    </div>
+    <p>Open catalog of books available to read online.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.numbeo.com/cost-of-living/gmaps.jsp" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=numbeo.com&sz=128">
+      <h3 class="topic-title">Numbeo</h3>
+    </div>
+    <p>Compare cost of living worldwide.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.freelancer.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=freelancer.com&sz=128">
+      <h3 class="topic-title">Freelancer</h3>
+    </div>
+    <p>Platform for freelance jobs and projects.</p>
+  </a>
+
+  <a class="topic-card" href="https://csvistool.com/DequeLL" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=csvistool.com&sz=128">
+      <h3 class="topic-title">CSVistool</h3>
+    </div>
+    <p>Visualize data structures and algorithms.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.wolframalpha.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=wolframalpha.com&sz=128">
+      <h3 class="topic-title">WolframAlpha</h3>
+    </div>
+    <p>Computational knowledge engine.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.edclub.com/sportal/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=edclub.com&sz=128">
+      <h3 class="topic-title">EdClub</h3>
+    </div>
+    <p>Learn typing and keyboard skills.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.soscisurvey.de/tools/view-chars.php" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=soscisurvey.de&sz=128">
+      <h3 class="topic-title">Character Tool</h3>
+    </div>
+    <p>View and copy special characters easily.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.supercook.com/#/desktop" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=supercook.com&sz=128">
+      <h3 class="topic-title">SuperCook</h3>
+    </div>
+    <p>Find recipes based on available ingredients.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.loecsen.com/el" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=loecsen.com&sz=128">
+      <h3 class="topic-title">Loecsen</h3>
+    </div>
+    <p>Learn languages with audio and phrases.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.buildcores.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=buildcores.com&sz=128">
+      <h3 class="topic-title">BuildCores</h3>
+    </div>
+    <p>Explore and share project ideas and builds.</p>
+  </a>
+
+  <a class="topic-card" href="https://gohugo.io/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=gohugo.io&sz=128">
+      <h3 class="topic-title">Hugo</h3>
+    </div>
+    <p>Fast static site generator.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.cookiecutter.io/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=cookiecutter.io&sz=128" alt="Cookiecutter Icon">
+      <h3 class="topic-title">Cookiecutter</h3>
+    </div>
+    <p>Generate projects from templates quickly.</p>
+  </a>
+
+</div>
+</section>
+</main>
+
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Courses</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+  <div class="shape shape-circle"></div>
+  <div class="shape shape-triangle"></div>
+  <div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../main.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 40 40">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF5E00"/>
+            <stop offset="100%" style="stop-color:#00B2FF"/>
+          </linearGradient>
+        </defs>
+        <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+        <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+      </svg>
+      <span class="logo-text">Guidelines</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../main.html" class="nav-link">Home</a></li>
+      <li><a href="../main.html#template" class="nav-link">Template</a></li>
+      <li><a href="../main.html#workflow" class="nav-link">Workflow</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="topics">
+
+<h1 class="section-title">Online Courses</h1>
+
+<div class="topics-grid">
+
+  <!-- Inline CSS for icon + title layout -->
+  <style>
+    .topic-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .topic-icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .topic-title {
+      margin: 0;
+      font-size: 1.4em;
+    }
+  </style>
+
+  <a class="topic-card" href="https://www.classcentral.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=classcentral.com&sz=128" alt="Class Central Icon">
+      <h3 class="topic-title">Class Central</h3>
+    </div>
+    <p>Search engine for online courses and MOOCs.</p>
+  </a>
+
+  <a class="topic-card" href="https://github.com/EbookFoundation/free-programming-books/tree/main" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://github.githubassets.com/favicons/favicon.svg" alt="Free Programming Books Icon">
+      <h3 class="topic-title">Free Programming Books</h3>
+    </div>
+    <p>Huge collection of free programming books.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.freecodecamp.org/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=freecodecamp.org&sz=128" alt="freeCodeCamp Icon">
+      <h3 class="topic-title">freeCode Camp</h3>
+    </div>
+    <p>Free interactive coding courses and certifications.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.mindluster.com/?search_for=neural+network" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=mindluster.com&sz=128" alt="MindLuster Icon">
+      <h3 class="topic-title">MindLuster</h3>
+    </div>
+    <p>Free online courses on various technical topics.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.hacksplaining.com/lessons" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=hacksplaining.com&sz=128" alt="Hacksplaining Icon">
+      <h3 class="topic-title">Hacks plaining</h3>
+    </div>
+    <p>Learn web security through interactive lessons.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.udemy.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=udemy.com&sz=128" alt="Udemy Icon">
+      <h3 class="topic-title">Udemy</h3>
+    </div>
+    <p>Online courses across tech, business, and more.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.kaggle.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=kaggle.com&sz=128" alt="Kaggle Icon">
+      <h3 class="topic-title">Kaggle</h3>
+    </div>
+    <p>Data science competitions and ML projects platform.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.theodinproject.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=theodinproject.com&sz=128" alt="Odin Project Icon">
+      <h3 class="topic-title">The Odin Project</h3>
+    </div>
+    <p>Full-stack web development curriculum.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.coursera.org/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=coursera.org&sz=128" alt="Coursera Icon">
+      <h3 class="topic-title">Coursera</h3>
+    </div>
+    <p>University-level online courses and certificates.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.datacamp.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=datacamp.com&sz=128" alt="DataCamp Icon">
+      <h3 class="topic-title">DataCamp</h3>
+    </div>
+    <p>Interactive data science and analytics learning.</p>
+  </a>
+
+  <a class="topic-card" href="https://resources.nvidia.com/en-us-nvidia-training/free-courses?xs=557650" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=nvidia.com&sz=128" alt="NVIDIA Training Icon">
+      <h3 class="topic-title">NVIDIA Courses</h3>
+    </div>
+    <p>Free AI and GPU computing courses.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.slideshare.net/slideshow/research-101-how-to-read-a-scientific-paper-1a7f/267166602" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=slideshare.net&sz=128" alt="SlideShare Icon">
+      <h3 class="topic-title">Research 101</h3>
+    </div>
+    <p>Guide on how to read scientific papers.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.youtube.com/watch?v=UY7sVKJPTMA" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=youtube.com&sz=128" alt="YouTube Icon">
+      <h3 class="topic-title">YouTube Lecture</h3>
+    </div>
+    <p>Educational video resource.</p>
+  </a>
+
+</div>
+</section>
+</main>
+
+<script src="../script.js"></script>
+</body>
+</html>

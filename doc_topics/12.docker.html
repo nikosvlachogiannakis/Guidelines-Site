@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docker Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+  <div class="shape shape-circle"></div>
+  <div class="shape shape-triangle"></div>
+  <div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../main.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 40 40">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF5E00"/>
+            <stop offset="100%" style="stop-color:#00B2FF"/>
+          </linearGradient>
+        </defs>
+        <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+        <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+      </svg>
+      <span class="logo-text">Guidelines</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../main.html" class="nav-link">Home</a></li>
+      <li><a href="../main.html#concepts" class="nav-link">Concepts</a></li>
+      <li><a href="../main.html#workflow" class="nav-link">Workflow</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="topics">
+
+<h1 class="section-title">Docker Guide</h1>
+
+<div class="topic-content">
+
+<p>Docker is a platform that allows you to package applications into containers, ensuring consistency across environments. Containers are lightweight, isolated environments that share the host OS kernel.</p>
+
+<div class="pdf-actions">
+  <a href="../cheatsheets/docker.html" class="pdf-btn">More about Docker</a>
+</div>
+
+<h2 id="install">Install Docker</h2>
+
+<p>Install Docker Desktop (Windows/macOS) or Docker Engine (Linux) and verify installation:</p>
+
+<pre><code>docker --version</code></pre>
+<p>This prints the installed Docker version.</p>
+
+<h2 id="hello-world">Hello World</h2>
+<p>Run a simple test container to confirm Docker works:</p>
+<pre><code>docker run hello-world</code></pre>
+<p>This command pulls the "hello-world" image and runs it.</p>
+
+<h2 id="concepts">Basic Concepts</h2>
+<ul>
+<li><strong>Image:</strong> Read-only template for containers.</li>
+<li><strong>Container:</strong> Running instance of an image.</li>
+<li><strong>Dockerfile:</strong> Instructions to build an image.</li>
+<li><strong>Volumes:</strong> Persist data outside containers.</li>
+<li><strong>Networks:</strong> Enable communication between containers.</li>
+</ul>
+
+<h2>Create a Dockerfile</h2>
+<p>This Dockerfile sets up a Python 3.11 app, copies project files, installs dependencies, and runs main.py.</p>
+<pre><code># Dockerfile
+FROM python:3.11
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "main.py"]
+</code></pre>
+
+<h2>Build and Run</h2>
+<p>Build the Docker image and run the container:</p>
+<pre><code># Build image
+docker build -t my_app .
+
+# Run container interactively, removing it after exit
+docker run -it --rm my_app
+</code></pre>
+
+<h2>Docker Compose</h2>
+<p>Use Docker Compose for multi-container applications. This example exposes port 5000 and mounts local files:</p>
+<pre><code># docker-compose.yml
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - ENV=development
+</code></pre>
+
+<h2>Volumes and Persistence</h2>
+<p>Keep data outside containers for persistence:</p>
+<pre><code># Create volume
+docker volume create my_data
+
+# Run container using volume
+docker run -v my_data:/app/data my_app
+</code></pre>
+
+<h2 id="workflow">Workflow Example</h2>
+<p>Example of building, running, and cleaning up:</p>
+<pre><code>cd my_project
+docker build -t my_app .
+docker run -it --rm -v my_data:/app/data my_app
+docker-compose up
+docker system prune -f  # Remove unused images and containers
+</code></pre>
+
+<h2>Best Practices</h2>
+<ul>
+<li>Keep images small with multi-stage builds.</li>
+<li>Pin versions for reproducibility.</li>
+<li>Use `.dockerignore` to exclude unnecessary files.</li>
+</ul>
+
+</div>
+</section>
+</main>
+
+<script src="../script.js"></script>
+</body>
+</html>

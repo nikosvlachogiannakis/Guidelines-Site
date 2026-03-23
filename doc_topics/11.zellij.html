@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zellij Binary Installation & Poetry Workflow</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#install" class="nav-link">Install</a></li>
+<li><a href="../main.html#workflow" class="nav-link">Workflow</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">Zellij Binary Installation (Linux x86_64) & Poetry Workflow</h1>
+
+<div class="topic-content">
+
+<h2 id="install">1️⃣ Check System Architecture</h2>
+
+<pre><code class="language-bash">uname -s
+uname -m
+</code></pre>
+
+<p>If output shows <strong>OS: Linux</strong> and <strong>Architecture: x86_64</strong>, download:</p>
+
+<p><strong>zellij-x86_64-unknown-linux-musl.tar.gz</strong> from <a href="https://github.com/zellij-org/zellij/releases">Zellij GitHub releases</a></p>
+
+<pre><code class="language-bash">curl -LO https://github.com/zellij-org/zellij/releases/download/v0.41.2/zellij-x86_64-unknown-linux-musl.tar.gz
+tar -xvf zellij*.tar.gz
+chmod +x zellij
+./zellij
+</code></pre>
+
+<p>Optionally, move binary to local bin and add to PATH:</p>
+
+<pre><code class="language-bash">mkdir -p ~/.local/bin
+mv zellij ~/.local/bin/
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+which zellij
+zellij --version
+</code></pre>
+
+<hr>
+
+<h2 id="workflow">Zellij + Poetry Workflow Cheat Sheet</h2>
+
+<h3>1️⃣ SSH and Start Zellij</h3>
+
+<pre><code class="language-bash">ssh user@remote-machine
+zellij
+</code></pre>
+
+<h3>2️⃣ Open Tabs or Panels</h3>
+
+<p><strong>Tabs (separate shell per script)</strong></p>
+<ul>
+<li>New tab: <strong>Ctrl+t → n</strong></li>
+<li>Next tab: <strong>Ctrl+t → Tab</strong></li>
+<li>Previous tab: <strong>Ctrl+g → Shift+Tab</strong></li>
+<li>Go to tab by number: <strong>Ctrl+g → 0-9</strong></li>
+</ul>
+
+<p><strong>Panels (split view in same tab)</strong></p>
+<ul>
+<li>Split vertically: <strong>Ctrl+g → v</strong></li>
+<li>Split horizontally: <strong>Ctrl+g → h</strong></li>
+<li>Move between panels: <strong>Ctrl+g → arrow keys</strong></li>
+<li>Resize panels: <strong>Ctrl+g → hold Alt + arrow keys</strong></li>
+</ul>
+
+<h3>3️⃣ Navigate to Poetry Project</h3>
+
+<pre><code class="language-bash">cd ~/my_project
+</code></pre>
+
+<h3>4️⃣ Activate Poetry Environment</h3>
+
+<p><strong>Option A — Interactive Shell</strong></p>
+<pre><code class="language-bash">poetry shell
+python script1.py
+</code></pre>
+
+<p>Repeat in another tab/panel:</p>
+<pre><code class="language-bash">poetry shell
+python script2.py
+</code></pre>
+
+<p><strong>Option B — Direct Run (non-interactive)</strong></p>
+<pre><code class="language-bash">poetry run python script1.py
+poetry run python script2.py
+</code></pre>
+
+<h3>5️⃣ Detach and Reattach Sessions</h3>
+
+<ul>
+<li>Detach: <strong>Ctrl+g → d</strong></li>
+<li>List sessions:
+<pre><code class="language-bash">zellij list-sessions</code></pre></li>
+<li>Reattach session:
+<pre><code class="language-bash">zellij attach -s session_name</code></pre></li>
+</ul>
+
+<h3>6️⃣ Optional Tips</h3>
+
+<ul>
+<li>Name tabs after scripts: <strong>Ctrl+g → n</strong></li>
+<li>Close tab/panel: <strong>Ctrl+g → x</strong></li>
+<li>Combine panels + tabs to run multiple scripts efficiently</li>
+</ul>
+
+<h3>7️⃣ Example Layouts</h3>
+
+<p><strong>Tabs:</strong></p>
+<ul>
+<li>Tab 1: script1.py (poetry run)</li>
+<li>Tab 2: script2.py (poetry run)</li>
+<li>Tab 3: monitoring/logs (optional)</li>
+</ul>
+
+<p><strong>Panels (one tab):</strong></p>
+<ul>
+<li>Left panel: script1.py</li>
+<li>Right panel: script2.py</li>
+</ul>
+
+<h3>✅ Key Takeaways</h3>
+
+<ul>
+<li>Use tabs for separate scripts, panels for simultaneous monitoring</li>
+<li>Always run scripts inside the Poetry environment</li>
+<li>Detach sessions to keep scripts running after SSH disconnect</li>
+<li>Name tabs/panels for clarity</li>
+</ul>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

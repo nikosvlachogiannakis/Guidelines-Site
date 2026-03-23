@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>New GitHub Repository</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Background Elements -->
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#topics" class="nav-link">Topics</a></li>
+<li><a href="../main.html#about" class="nav-link">About</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<!-- Main Content -->
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">New GitHub Repository</h1>
+
+<div class="topic-content">
+
+<h2>Option 1. Create a repo on GitHub and clone it locally</h2>
+
+<ul>
+<li>Create a Repository on GitHub (either public or private) <span style="color:lime">with a README.md file</span></li>
+<li>Go to the path where you want to have your project:</li>
+</ul>
+
+<pre><code>cd path</code></pre>
+
+<ul>
+<li>Copy the link of the SSH key (ssh_key) from your repository in GitHub and write the following in terminal:</li>
+</ul>
+
+<pre><code>git clone ssh_key</code></pre>
+
+<ul>
+<li>You can open the file we cloned in VS Code and work on it.</li>
+</ul>
+
+<hr>
+
+<h2>Option 2. Create a File locally and push to GitHub</h2>
+
+<ul>
+
+<li>
+Go to GitHub and create a repo. Name it the same as your local repo and
+<span style="color:red">do NOT create a README.md</span>
+(you already have one locally). You want your repo to be
+<span style="color:cyan">completely empty</span>.
+</li>
+
+<li>Once the repo is created in GitHub, go to Code → SSH and copy the repo SSH link.</li>
+
+<li>Locally, on your cmd/bash do:</li>
+
+</ul>
+
+<pre><code>git init</code></pre>
+<br>
+<pre><code>git add .</code></pre>
+<br>
+<pre><code>git commit -m "Initial commit"</code></pre>
+<br>
+<pre><code>git remote add origin ssh_link-you-copied</code></pre>
+<br>
+<pre><code>git branch -M main</code></pre>
+<br>
+<pre><code>git push -u origin main</code></pre>
+
+<p>
+Your commits should be pushed to GitHub, and your local repo will be connected to the GitHub repo.
+</p>
+
+<hr>
+
+<h2>Option 3. Using GitHub CLI (gh)</h2>
+
+<p>
+This option uses <span style="color:cyan">HTTPS protocol</span> instead of SSH.
+</p>
+
+<ul>
+
+<li>
+Install
+<a href="https://github.com/cli" target="_blank">GitHub CLI</a>.
+After successful installation of <code>gh</code> (if you install shell repo
+<code>gh</code> will be installed too), it asks for a token.
+Follow the link and create a token with the proposed permissions.
+After this action, you can use <code>gh</code> to do things in GitHub.
+</li>
+
+<li>Connect it to your GitHub with:</li>
+
+</ul>
+
+<pre><code>gh auth login</code></pre>
+
+<p>and follow the prompts.</p>
+
+<p>To create a new public repo in the current folder, do:</p>
+
+<pre><code>git init</code></pre>
+<br>
+<pre><code>git add .</code></pre>
+<br>
+<pre><code>git commit -m "Initial commit"</code></pre>
+<br>
+<pre><code>gh repo create REPO_NAME --public --source=. --push</code></pre>
+
+<p>Clone a repo:</p>
+
+<pre><code>gh repo clone repo_name</code></pre>
+
+<p>See all your repos in GitHub:</p>
+
+<pre><code>gh repo list</code></pre>
+
+<hr>
+
+<h2>Important Note</h2>
+
+<h4>Token is used for gh, GitHub's CLI</h4>
+
+<p>
+If that token <span style="color:red">expires</span> you need to run the following
+to make sure the token is updated.
+</p>
+
+<h4>In the remote machines' Terminal:</h4>
+
+<pre><code>gh auth login</code></pre>
+
+<p>Then it will ask you:</p>
+
+<pre><code>? Where do you use GitHub?</code></pre>
+
+<p>Select:</p>
+
+<pre><code>GitHub.com</code></pre>
+
+<p>Then it will ask:</p>
+
+<pre><code>? What is your preferred protocol for Git operations on this host?</code></pre>
+
+<p>Select:</p>
+
+<pre><code>HTTPS</code></pre>
+
+<p>Question:</p>
+
+<pre><code>? Authenticate Git with your GitHub credentials?</code></pre>
+
+<p>Select:</p>
+
+<pre><code>Yes</code></pre>
+
+<p>Question:</p>
+
+<pre><code>? How would you like to authenticate GitHub CLI?</code></pre>
+
+<p>Select:</p>
+
+<pre><code>Paste an authentication token</code></pre>
+
+<p>Then on the following:</p>
+
+<pre><code>? Paste your authentication token:</code></pre>
+
+<p>
+<strong>Paste</strong> the token you (re-)generated and copied from GitHub.
+</p>
+
+<p>
+Then it will say that you are logged in as <code>account_name</code> or something similar.
+</p>
+
+<div class="tags">
+<span class="tag">#GitHub</span>
+<span class="tag">#Git</span>
+<span class="tag">#CLI</span>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

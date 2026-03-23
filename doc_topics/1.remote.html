@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Remote Machine Connection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Background Elements -->
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<!-- Navigation -->
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#topics" class="nav-link">Topics</a></li>
+<li><a href="../main.html#about" class="nav-link">About</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<!-- Main Content -->
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">Remote Machine Connection</h1>
+
+<div class="topic-content">
+
+<p>
+In order to connect to a remote machine you can do it in two ways:
+</p>
+
+<h2>Option 1: With Password</h2>
+
+<pre><code>ssh user@remote-server</code></pre>
+
+<p>
+Then you must add the password of the remote machine and you are all set!
+</p>
+
+<p class="note">
+<strong>Note:</strong> The first time you connect, SSH may ask you to confirm the server’s authenticity —
+type <span style="color:lime">yes</span> and press Enter.
+</p>
+
+<hr>
+
+<h2>Option 2: Without Password (Using SSH Keys)</h2>
+
+<h3>1. Generate an SSH key (If you don't have one)</h3>
+
+<p>
+Locally, on your computer, open <em>Terminal</em> (if you have Windows open <em>Git Bash</em>) and run:
+</p>
+
+<pre><code>ssh-keygen -t ed25519 -C "your_email@example.com" -f ~/.ssh/name_of_the_key</code></pre>
+
+<ul>
+<li>Press <em>Enter</em> to accept the default path: <code>C:\Users\username\.ssh\id_ed25519</code></li>
+<li>Choose <em>no passphrase</em> to enable password-less login</li>
+</ul>
+
+<h3>2. Copy the Public Key to the Remote Server</h3>
+
+<pre><code>ssh-copy-id user@remote-server</code></pre>
+
+<h3>3. Use SSH Config File</h3>
+
+<p>Create or edit:</p>
+
+<pre><code>~/.ssh/config</code></pre>
+
+<p>Add:</p>
+
+<pre><code>Host myserver
+HostName REMOTE_SERVER
+User USERNAME
+IdentityFile ~/.ssh/id_ed25519
+</code></pre>
+
+<p>Now you can simply run:</p>
+
+<pre><code>ssh myserver</code></pre>
+
+<h3>4. Test the Password-less SSH Login</h3>
+
+<p>Run:</p>
+
+<pre><code>ssh user@remote-server</code></pre>
+
+<p>OR</p>
+
+<pre><code>ssh myserver</code></pre>
+
+<p>You should be logged in without a password.</p>
+
+<h2>Log Out From The Remote Machine</h2>
+
+<pre><code>Ctrl D</code></pre>
+
+<p>OR</p>
+
+<pre><code>exit</code></pre>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

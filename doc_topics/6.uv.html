@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Learn UV - Fast Python Package Manager</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#topics" class="nav-link">Topics</a></li>
+<li><a href="../main.html#about" class="nav-link">About</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">Learn UV – Fast Python Package Manager</h1>
+
+<div class="topic-content">
+
+<p>
+<code>uv</code> is a blazing-fast Python package and environment manager written in Rust by the creators of Ruff.  
+It combines the roles of pip, virtual environments, and dependency managers like Poetry into a single modern tool.
+</p>
+
+<h2>Step-by-Step Summary</h2>
+
+<table border="1" cellspacing="0" cellpadding="12" style="border-collapse: collapse; width: 100%; text-align: center; font-family: Arial, sans-serif;">
+
+<thead>
+<tr>
+<th style="padding: 12px 20px;">Step</th>
+<th style="padding: 12px 20px;">Action</th>
+<th style="padding: 12px 20px;">Command / Concept</th>
+<th style="padding: 12px 20px;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="padding: 12px 20px;">1</td>
+<td style="padding: 12px 20px;">Install uv</td>
+<td style="padding: 12px 20px;"><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></td>
+<td style="padding: 12px 20px;">Installs uv</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">2</td>
+<td style="padding: 12px 20px;">Create project</td>
+<td style="padding: 12px 20px;"><code>uv init myapp</code></td>
+<td style="padding: 12px 20px;">Initialize a new project</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">3</td>
+<td style="padding: 12px 20px;">Add dependencies</td>
+<td style="padding: 12px 20px;"><code>uv add requests rich</code></td>
+<td style="padding: 12px 20px;">Adds packages and updates configuration</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">4</td>
+<td style="padding: 12px 20px;">Run code</td>
+<td style="padding: 12px 20px;"><code>uv run python src/myapp/main.py</code></td>
+<td style="padding: 12px 20px;">Runs code inside the environment</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">5</td>
+<td style="padding: 12px 20px;">Create environment</td>
+<td style="padding: 12px 20px;"><code>uv venv .venv</code></td>
+<td style="padding: 12px 20px;">Create standalone environment</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">6</td>
+<td style="padding: 12px 20px;">Sync dependencies</td>
+<td style="padding: 12px 20px;"><code>uv sync</code></td>
+<td style="padding: 12px 20px;">Install dependencies from lock file</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">7</td>
+<td style="padding: 12px 20px;">Run tools</td>
+<td style="padding: 12px 20px;"><code>uv run pytest</code></td>
+<td style="padding: 12px 20px;">Run tools inside the environment</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">8</td>
+<td style="padding: 12px 20px;">Build package</td>
+<td style="padding: 12px 20px;"><code>uv build</code></td>
+<td style="padding: 12px 20px;">Creates distribution files</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">9</td>
+<td style="padding: 12px 20px;">Publish package</td>
+<td style="padding: 12px 20px;"><code>uv publish</code></td>
+<td style="padding: 12px 20px;">Upload package to PyPI</td>
+</tr>
+</tbody>
+
+</table>
+
+<h2>Phase Summary</h2>
+
+<table border="1" cellspacing="0" cellpadding="12" style="border-collapse: collapse; width: 100%; text-align: center; font-family: Arial, sans-serif;">
+
+<thead>
+<tr>
+<th style="padding: 12px 20px;">Phase</th>
+<th style="padding: 12px 20px;">Focus</th>
+<th style="padding: 12px 20px;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="padding: 12px 20px;">Phase 1</td>
+<td style="padding: 12px 20px;">Getting Started</td>
+<td style="padding: 12px 20px;">Install uv and create projects</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Phase 2</td>
+<td style="padding: 12px 20px;">Environment Management</td>
+<td style="padding: 12px 20px;">Manage Python environments</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Phase 3</td>
+<td style="padding: 12px 20px;">Packaging</td>
+<td style="padding: 12px 20px;">Build and publish packages</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Phase 4</td>
+<td style="padding: 12px 20px;">Advanced</td>
+<td style="padding: 12px 20px;">Automation and CI/CD</td>
+</tr>
+</tbody>
+
+</table>
+
+<h2>Why uv?</h2>
+
+<table border="1" cellspacing="0" cellpadding="12" style="border-collapse: collapse; width: 100%; text-align: center; font-family: Arial, sans-serif;">
+
+<thead>
+<tr>
+<th style="padding: 12px 20px;">Feature</th>
+<th style="padding: 12px 20px;">Poetry</th>
+<th style="padding: 12px 20px;">uv</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="padding: 12px 20px;">Speed</td>
+<td style="padding: 12px 20px;">Moderate</td>
+<td style="padding: 12px 20px;">Blazing fast</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Virtual environments</td>
+<td style="padding: 12px 20px;">Built-in</td>
+<td style="padding: 12px 20px;">Built-in</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Dependency resolution</td>
+<td style="padding: 12px 20px;">Good</td>
+<td style="padding: 12px 20px;">Excellent</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Language</td>
+<td style="padding: 12px 20px;">Python</td>
+<td style="padding: 12px 20px;">Rust</td>
+</tr>
+</tbody>
+
+</table>
+
+<h2>Phase 1 – Getting Started</h2>
+
+<h3>Install uv</h3>
+
+<p>macOS / Linux</p>
+
+<pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
+
+<p>Windows (PowerShell)</p>
+
+<pre><code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code></pre>
+
+Check installation:
+
+<pre><code>uv --version</code></pre>
+
+<h3>Create a New Project</h3>
+
+<pre><code>uv init myapp
+cd myapp
+</code></pre>
+
+Project structure:
+
+<pre><code>myapp/
+├── pyproject.toml
+├── src/myapp/
+└── tests/
+</code></pre>
+
+<h3>Add Dependencies</h3>
+
+<pre><code>uv add requests rich</code></pre>
+
+View dependency tree:
+
+<pre><code>uv tree</code></pre>
+
+<h3>Run Code</h3>
+
+Example Python file:
+
+<pre><code>import requests
+from rich import print
+
+def main():
+    response = requests.get("https://api.github.com")
+    print("Status:", response.status_code)
+
+if __name__ == "__main__":
+    main()
+</code></pre>
+
+Run:
+
+<pre><code>uv run python src/myapp/main.py</code></pre>
+
+<h2>Phase 2 – Environment Management</h2>
+
+Create environment:
+
+<pre><code>uv venv .venv</code></pre>
+
+Activate manually:
+
+<pre><code>source .venv/bin/activate
+.venv\Scripts\activate
+</code></pre>
+
+Sync dependencies:
+
+<pre><code>uv sync</code></pre>
+
+Run commands inside environment:
+
+<pre><code>uv run pytest
+uv run python src/myapp/main.py
+</code></pre>
+
+<h2>Phase 3 – Packaging</h2>
+
+Example configuration:
+
+<pre><code>[project]
+name = "myapp"
+version = "0.1.0"
+description = "My uv project"
+requires-python = ">=3.9"
+dependencies = [
+    "requests",
+    "rich"
+]
+</code></pre>
+
+Build package:
+
+<pre><code>uv build</code></pre>
+
+Generated files:
+
+<pre><code>dist/
+├── myapp-0.1.0.tar.gz
+└── myapp-0.1.0.whl
+</code></pre>
+
+Publish package:
+
+<pre><code>uv publish</code></pre>
+
+<h2>Advanced Topics</h2>
+
+Install Python versions:
+
+<pre><code>uv python install 3.12
+uv python use 3.12
+</code></pre>
+
+Install global tools:
+
+<pre><code>uv tool install ruff
+uv tool install black
+</code></pre>
+
+Add dev dependencies:
+
+<pre><code>uv add --dev pytest</code></pre>
+
+Remove dependency:
+
+<pre><code>uv remove requests</code></pre>
+
+<h2>Learning Roadmap</h2>
+
+<table border="1" cellspacing="0" cellpadding="12" style="border-collapse: collapse; width: 100%; text-align: center; font-family: Arial, sans-serif;">
+
+<thead>
+<tr>
+<th style="padding: 12px 20px;">Level</th>
+<th style="padding: 12px 20px;">Topic</th>
+<th style="padding: 12px 20px;">Goal</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="padding: 12px 20px;">Beginner</td>
+<td style="padding: 12px 20px;">uv basics</td>
+<td style="padding: 12px 20px;">init, add, sync, run</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Intermediate</td>
+<td style="padding: 12px 20px;">environment management</td>
+<td style="padding: 12px 20px;">manage Python versions</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Advanced</td>
+<td style="padding: 12px 20px;">packaging</td>
+<td style="padding: 12px 20px;">build and publish packages</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">Expert</td>
+<td style="padding: 12px 20px;">CI/CD</td>
+<td style="padding: 12px 20px;">automation pipelines</td>
+</tr>
+</tbody>
+
+</table>
+
+<p>
+<strong>Summary:</strong>  
+<code>uv</code> unifies dependency management, environments, and packaging into a single lightning-fast tool that replaces pip, poetry, and pyenv workflows.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

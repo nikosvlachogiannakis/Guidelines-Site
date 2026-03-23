@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+  <div class="shape shape-circle"></div>
+  <div class="shape shape-triangle"></div>
+  <div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../main.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 40 40">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF5E00"/>
+            <stop offset="100%" style="stop-color:#00B2FF"/>
+          </linearGradient>
+        </defs>
+        <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+        <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+      </svg>
+      <span class="logo-text">Guidelines</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../main.html" class="nav-link">Home</a></li>
+      <li><a href="../main.html#template" class="nav-link">Template</a></li>
+      <li><a href="../main.html#workflow" class="nav-link">Workflow</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="topics">
+
+<h1 class="section-title">Python Related Sites</h1>
+
+<div class="topics-grid">
+
+  <!-- Inline CSS for topic header layout -->
+  <style>
+    /* Flex layout for icon + site name */
+    .topic-header {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* space between icon and title */
+      margin-bottom: 6px;
+    }
+
+    .topic-icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .topic-title {
+      margin: 0;
+      font-size: 1.4em;
+    }
+  </style>
+
+  <a class="topic-card" href="https://sebdg-ai-cookbook.hf.space/theory/activations.html" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=https://ai.com&sz=128" alt="AI Activations Icon">
+      <h3 class="topic-title">My AI Cookbook</h3>
+    </div>
+    <p>Activation functions overview and theory.</p>
+  </a>
+
+  <a class="topic-card" href="https://github.com/textualize/rich" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://github.githubassets.com/favicons/favicon.svg" alt="Rich Icon">
+      <h3 class="topic-title">Rich (GitHub)</h3>
+    </div>
+    <p>Python library for rich text & beautiful formatting.</p>
+  </a>
+
+  <a class="topic-card" href="https://roadmap.sh/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=roadmap.sh&sz=128" alt="Roadmap.sh Icon">
+      <h3 class="topic-title">Roadmap.sh</h3>
+    </div>
+    <p>Developer & tech learning roadmaps.</p>
+  </a>
+
+  <a class="topic-card" href="https://exercism.org/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=exercism.org&sz=128" alt="Exercism Icon">
+      <h3 class="topic-title">Exercism</h3>
+    </div>
+    <p>Coding practice & mentored learning platform.</p>
+  </a>
+
+  <a class="topic-card" href="https://huggingface.co/spaces" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=huggingface.co&sz=128" alt="Hugging Face Spaces Icon">
+      <h3 class="topic-title">Hugging Face Spaces</h3>
+    </div>
+    <p>Interactive AI demo spaces by Hugging Face.</p>
+  </a>
+
+  <a class="topic-card" href="https://github.com/codecrafters-io/build-your-own-x" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://github.githubassets.com/favicons/favicon.svg" alt="Build Your Own X Icon">
+      <h3 class="topic-title">Build Your Own X</h3>
+    </div>
+    <p>Learn by building tools from scratch.</p>
+  </a>
+
+  <a class="topic-card" href="https://staying.fun/en" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=staying.fun&sz=128" alt="Staying Fun Icon">
+      <h3 class="topic-title">Staying Fun</h3>
+    </div>
+    <p>Fun tech experiments & interactive content.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.codedex.io/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=codedex.io&sz=128" alt="Codedex Icon">
+      <h3 class="topic-title">Codedex</h3>
+    </div>
+    <p>Programming skills & quick reference tools.</p>
+  </a>
+
+  <a class="topic-card" href="https://wandb.ai/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=wandb.ai&sz=128" alt="Weights & Biases Icon">
+      <h3 class="topic-title">Weights & Biases</h3>
+    </div>
+    <p>Experiment tracking & ML collaboration.</p>
+  </a>
+
+  <a class="topic-card" href="https://flake8.pycqa.org/en/latest/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=flake8.pycqa.org&sz=128" alt="Flake8 Icon">
+      <h3 class="topic-title">Flake8</h3>
+    </div>
+    <p>Python linting tool & style checker.</p>
+  </a>
+
+  <a class="topic-card" href="https://github.com/public-apis/public-apis?tab=readme-ov-file#programming" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://github.githubassets.com/favicons/favicon.svg" alt="Public APIs Icon">
+      <h3 class="topic-title">Public APIs</h3>
+    </div>
+    <p>Large curated list of free APIs.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.jetbrains.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=jetbrains.com&sz=128" alt="JetBrains Icon">
+      <h3 class="topic-title">JetBrains</h3>
+    </div>
+    <p>Industry IDEs & developer tools.</p>
+  </a>
+
+</div>
+</section>
+</main>
+
+<script src="../script.js"></script>
+</body>
+</html>

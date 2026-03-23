@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookiecutter Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+  <div class="shape shape-circle"></div>
+  <div class="shape shape-triangle"></div>
+  <div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../main.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 40 40">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF5E00"/>
+            <stop offset="100%" style="stop-color:#00B2FF"/>
+          </linearGradient>
+        </defs>
+        <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+        <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+      </svg>
+      <span class="logo-text">Guidelines</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../main.html" class="nav-link">Home</a></li>
+      <li><a href="../main.html#template" class="nav-link">Template</a></li>
+      <li><a href="../main.html#workflow" class="nav-link">Workflow</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="topics">
+
+<h1 class="section-title">Cookiecutter Guide</h1>
+
+<div class="topic-content">
+
+<p>Cookiecutter is a command-line tool to generate projects from reusable templates. It helps maintain consistency and saves time for Python projects, web apps, or any structured project.</p>
+
+<h2 id="install">Install Cookiecutter</h2>
+<p>Install via pip:</p>
+<pre><code>pip install cookiecutter</code></pre>
+
+<h2 id="template">Create a Template</h2>
+<p>Define the template folder structure and placeholders using {{}} syntax:</p>
+<pre><code>cookiecutter-myproject/
+├── cookiecutter.json        # Template variables
+├── {{cookiecutter.project_slug}}/
+│   ├── __init__.py
+│   └── main.py
+</code></pre>
+
+<h3>cookiecutter.json Example</h3>
+<p>Define default values and prompts for project generation:</p>
+<pre><code>{
+  "project_name": "My Project",
+  "project_slug": "my_project",
+  "author_name": "Your Name",
+  "python_version": "3.11"
+}
+</code></pre>
+
+<h2>Generate a Project</h2>
+<p>Run Cookiecutter to generate a new project from your template:</p>
+<pre><code>cookiecutter cookiecutter-myproject/</code></pre>
+<p>It will ask for variables defined in cookiecutter.json and create a new project folder with the substituted values.</p>
+
+<h2 id="workflow">Workflow Example</h2>
+<p>Generate project, navigate, run scripts, and initialize Git:</p>
+<pre><code># Generate project from template
+cookiecutter cookiecutter-myproject/
+
+# Navigate into the project
+cd my_project
+
+# Run main script
+python main.py
+
+# Initialize git repository
+git init
+git add .
+git commit -m "Initial commit"
+</code></pre>
+
+<h2>Advanced Tips</h2>
+<ul>
+<li>Use hooks with <code>pre_gen_project.py</code> or <code>post_gen_project.py</code> for automation.</li>
+<li>Keep templates in GitHub for sharing.</li>
+<li>Use descriptive variable names and defaults for reusable templates.</li>
+</ul>
+
+</div>
+</section>
+</main>
+
+<script src="../script.js"></script>
+</body>
+</html>

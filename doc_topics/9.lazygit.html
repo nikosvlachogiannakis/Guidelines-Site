@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Using Lazygit Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#usage" class="nav-link">Usage</a></li>
+<li><a href="../main.html#shortcuts" class="nav-link">Shortcuts</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">How to Use Lazygit to Improve Your Git Workflow</h1>
+
+<div class="topic-content">
+
+<h2 id="install">Install Lazygit</h2>
+
+<p>Follow the step-by-step guide in <a href="https://www.freecodecamp.org/news/how-to-use-lazygit-to-improve-your-git-workflow/#heading-how-to-install-lazygit">Install Lazygit</a>.</p>
+
+<h2 id="usage">How to Use Lazygit</h2>
+
+<p>Open your terminal and type:</p>
+
+<pre><code class="language-bash">lazygit</code></pre>
+
+<p>Lazygit UI is divided into six panels:</p>
+
+<ul>
+<li><strong>Status</strong></li>
+<li><strong>Files</strong></li>
+<li><strong>Branches</strong></li>
+<li><strong>Commits</strong></li>
+<li><strong>Stash</strong></li>
+<li><strong>Previews</strong></li>
+</ul>
+
+<h3>Status Panel</h3>
+<p>Shows an <strong>overview of your repository</strong> and current branch.</p>
+
+<h3>Files Panel</h3>
+<p>Shows <strong>modified, deleted, or unstaged files</strong>.</p>
+
+<h3>Branches Panel</h3>
+<p>Displays <strong>local and remote branches</strong>.</p>
+
+<h3>Commits Panel</h3>
+<p>Shows a <strong>list of commits</strong> in the current branch for viewing, checking out, or undoing.</p>
+
+<h3>Stashes Panel</h3>
+<p>Manage <strong>stashed changes</strong> to apply, drop, or view them.</p>
+
+<h3>Preview Panel</h3>
+<p>Preview unstaged changes, commits, logs, or file content.</p>
+
+<h2>Navigation Between Panels</h2>
+
+<p>Use <strong>left</strong> and <strong>right</strong> arrow keys or top panel keybindings:</p>
+
+<ul>
+<li><strong>1</strong> – Status</li>
+<li><strong>2</strong> – Files</li>
+<li><strong>3</strong> – Branches</li>
+<li><strong>4</strong> – Commits</li>
+<li><strong>5</strong> – Stash</li>
+</ul>
+
+<h2 id="shortcuts">Shortcuts and Key Mappings</h2>
+
+<p>Lazygit allows you to perform Git actions quickly with shortcuts:</p>
+
+<ul>
+<li><strong>a</strong> – Stage/unstage all files</li>
+<li><strong>space</strong> (Files panel) – Stage/unstage single file</li>
+<li><strong>c</strong> – Commit staged changes</li>
+<li><strong>P</strong> – Push commits</li>
+<li><strong>p</strong> – Pull changes</li>
+<li><strong>z</strong> – Undo last commit</li>
+<li><strong>s</strong> – Stash changes</li>
+<li><strong>S</strong> – View/apply stashes</li>
+<li><strong>n</strong> – Create a new branch</li>
+<li><strong>d</strong> – Delete a branch / discard changes</li>
+<li><strong>y</strong> – Copy file/commit info to clipboard</li>
+<li><strong>M</strong> – Merge selected branch</li>
+<li><strong>space</strong> (Branches panel) – Checkout branch</li>
+<li><strong>e</strong> – Open file externally</li>
+<li><strong>q</strong> – Quit Lazygit</li>
+<li><strong>?</strong> – Open keybindings menu</li>
+</ul>
+
+<h2>How to Commit a File</h2>
+<ol>
+<li>Select file with <strong>space</strong>, <strong>a</strong>, or double-click</li>
+<li>Press <strong>c</strong> to open commit panel</li>
+<li>Add commit message</li>
+<li>Press <strong>Enter</strong></li>
+</ol>
+
+<h2>Push and Pull Code</h2>
+<ul>
+<li><strong>P</strong> – Pull remote code</li>
+<li><strong>p</strong> – Push local commits</li>
+</ul>
+
+<h2>Create and Delete Branches</h2>
+
+<h3>Create Branch</h3>
+<ol>
+<li>Select Branches panel</li>
+<li>Press <strong>n</strong></li>
+<li>Enter branch name</li>
+<li>Press <strong>Enter</strong></li>
+</ol>
+
+<h3>Delete Branch</h3>
+<ol>
+<li>Select Branches panel</li>
+<li>Press <strong>d</strong></li>
+<li>Choose local or remote deletion</li>
+</ol>
+
+<p><strong>Note:</strong> Must be in Branches panel for <strong>n</strong> or <strong>d</strong> to work.</p>
+
+<h2>Undo a Commit</h2>
+<ol>
+<li>Press <strong>z</strong></li>
+<li>Select commit to undo</li>
+<li>Press <strong>Enter</strong></li>
+</ol>
+
+<h2>Merge a Branch</h2>
+<ol>
+<li>Press <strong>M</strong></li>
+<li>Choose merge type (Merge, Squash Merge, Squash & Leave Uncommitted)</li>
+<li>Press <strong>Enter</strong></li>
+</ol>
+
+<h2>Resolve Merge Conflicts</h2>
+<ol>
+<li>Perform merge using <strong>M</strong></li>
+<li>Conflicted files appear in Files panel</li>
+<li>Select file → press <strong>Enter</strong> → resolve conflicts with arrow keys and <strong>space</strong></li>
+</ol>
+
+<h2>Discard Changes</h2>
+<p>Press <strong>d</strong> on a file or commit to discard.</p>
+
+<h2>Copy Information</h2>
+<ol>
+<li>Select file or commit you want to copy from</li>
+<li>Press <strong>y</strong> to copy hash, path, or message</li>
+</ol>
+
+<h2>Other Keybindings</h2>
+<p>Press <strong>?</strong> to open Lazygit keybinding help menu. Menu updates per panel context.</p>
+
+<p>Reference: <a href="https://www.freecodecamp.org/news/how-to-use-lazygit-to-improve-your-git-workflow/">How to Use Lazygit to Improve Your Git Workflow</a></p>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

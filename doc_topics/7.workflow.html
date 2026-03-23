@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Organized Python Project with Poetry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#topics" class="nav-link">Topics</a></li>
+<li><a href="../main.html#about" class="nav-link">About</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">Create a Well-Organized Python Project Using Poetry</h1>
+
+<div class="topic-content">
+
+<p>
+This guide explains how to create a well-organized Python project using Poetry while adding tools that improve code quality, debugging, interactivity, and documentation.
+</p>
+
+<h2>Terminal Setup</h2>
+
+<h3>1. Go inside the project directory</h3>
+
+<pre><code>cd project_path</code></pre>
+
+<h3>2. Initialize Poetry</h3>
+
+<pre><code>poetry init</code></pre>
+
+<h2>Create Pre-Commit Configuration</h2>
+
+<h3>3. Create the configuration file</h3>
+
+<pre><code>touch .pre-commit-config.yaml</code></pre>
+
+Open the file:
+
+<pre><code>code .pre-commit-config.yaml</code></pre>
+
+Example configuration:
+
+<pre><code>repos:
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-toml
+</code></pre>
+
+<p>
+The configuration defines checks (hooks) that run automatically before each commit.
+</p>
+
+<h2>Install Development Tools</h2>
+
+<h3>4. Install pre-commit</h3>
+
+<pre><code>poetry add --group dev pre-commit</code></pre>
+
+<p>
+This installs the tool as a development dependency instead of a production dependency.
+</p>
+
+<h3>5. Install bpython</h3>
+
+<pre><code>poetry add --group dev bpython</code></pre>
+
+<h3>6. Install pretty-errors</h3>
+
+<pre><code>poetry add --group dev pretty-errors</code></pre>
+
+<h3>7. Activate pretty errors</h3>
+
+<pre><code>python3 -m pretty_errors</code></pre>
+
+<h3>8. Install dependencies</h3>
+
+<pre><code>poetry install</code></pre>
+
+<h3>9. Activate the Poetry environment</h3>
+
+<pre><code>poetry shell</code></pre>
+
+<h2>Initialize Git</h2>
+
+<pre><code>git init
+echo ".venv/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.pyc" >> .gitignore
+</code></pre>
+
+Add files:
+
+<pre><code>git add .
+git commit -m "Initial commit"
+</code></pre>
+
+Connect to GitHub:
+
+<pre><code>git remote add origin ssh_link_of_repo
+git branch -M main
+git push -u origin main
+</code></pre>
+
+<h2>Install Pre-Commit Hooks</h2>
+
+<pre><code>pre-commit install</code></pre>
+
+Optional checks:
+
+<pre><code>ls .git/hooks/pre-commit
+cat .git/hooks/pre-commit
+</code></pre>
+
+Run hooks on all files:
+
+<pre><code>pre-commit run --all-files</code></pre>
+
+<h2>Create Documentation with Sphinx</h2>
+
+<p>Sphinx is a documentation generator commonly used in Python projects.</p>
+
+<h3>15. Install documentation tools</h3>
+
+<pre><code>poetry add --group docs myst-parser numpydoc sphinx sphinx-math-dollar sphinx-rtd-theme
+</code></pre>
+
+<h3>16. Initialize Sphinx</h3>
+
+<pre><code>sphinx-quickstart docs</code></pre>
+
+<h3>17. Enter docs directory</h3>
+
+<pre><code>cd docs
+make clean
+</code></pre>
+
+<h3>18. Build documentation</h3>
+
+<pre><code>make html-all</code></pre>
+
+<p>This builds the HTML documentation pages from your Markdown or reStructuredText files.</p>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Python Poetry Guide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#topics" class="nav-link">Topics</a></li>
+<li><a href="../main.html#about" class="nav-link">About</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">Python Poetry</h1>
+
+<div class="topic-content">
+
+<p>
+Poetry is a tool that helps you manage your Python projects more easily. It installs packages, keeps track of dependencies, and ensures your project works consistently across different systems.
+</p>
+
+<p>
+It also creates a clean structure for your code and simplifies sharing or publishing your project. Poetry automatically manages virtual environments and project configuration, making development easier and more organized.
+</p>
+
+<h2>Download Poetry</h2>
+
+<p>
+Download from:
+<a href="https://python-poetry.org/docs/" target="_blank">Poetry Documentation</a>
+</p>
+
+<h2>Use Poetry on an Existing Project</h2>
+
+<h3>Open Terminal and Enter the Project Directory</h3>
+
+<pre><code>cd my_project</code></pre>
+
+<h3>Initialize Poetry</h3>
+
+<pre><code>poetry init</code></pre>
+
+<p>This command creates or updates the <code>pyproject.toml</code> file.</p>
+
+<pre><code>Package name [my_project]:
+Version [0.1.0]:
+Description []:
+Author [Your Name &lt;you@example.com&gt;, n to skip]:
+License []:
+Compatible Python versions [^3.11]:
+Would you like to define dependencies interactively?
+</code></pre>
+
+<p>Example generated configuration:</p>
+
+<pre><code>[tool.poetry]
+name = "my_project"
+version = "0.1.0"
+description = ""
+authors = ["Your Name &lt;you@example.com&gt;"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "my_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+</code></pre>
+
+<p>This method does not create project folders. It simply adds Poetry management to an existing project.</p>
+
+<h2>Create a New Project with Poetry</h2>
+
+<pre><code>poetry new my_project</code></pre>
+
+<p>This generates the following structure:</p>
+
+<pre><code>my_project/
+├── my_project/
+│   └── __init__.py
+├── tests/
+│   └── test_my_project.py
+├── pyproject.toml
+</code></pre>
+
+<h3>Enter the Project Directory</h3>
+
+<pre><code>cd my_project</code></pre>
+
+<h2>Open in VS Code</h2>
+
+<pre><code>code .</code></pre>
+
+<h2>Install Dependencies</h2>
+
+<pre><code>poetry install</code></pre>
+
+<h2>Activate the Environment</h2>
+
+<pre><code>poetry shell</code></pre>
+
+<h2>Configure VS Code Interpreter</h2>
+
+<p>
+Press <strong>Ctrl + Shift + P</strong> → Select <strong>Python: Select Interpreter</strong> and choose the Poetry environment.
+</p>
+
+<h2>Add Dependencies</h2>
+
+<p>Add a package:</p>
+
+<pre><code>poetry add requests</code></pre>
+
+<p>Add development dependency:</p>
+
+<pre><code>poetry add --dev pytest</code></pre>
+
+<h2>Virtual Environments</h2>
+
+<p>
+A virtual environment is an isolated Python workspace where project dependencies are installed separately from the system Python.
+</p>
+
+<h3>Activate Environment</h3>
+
+<pre><code>poetry shell</code></pre>
+
+<p>Example prompt:</p>
+
+<pre><code>(.venv) user@machine my_project %</code></pre>
+
+<h3>Run Commands Without Activating</h3>
+
+<pre><code>poetry run python main.py
+poetry run pytest
+</code></pre>
+
+<h3>Exit the Environment</h3>
+
+<pre><code>exit
+deactivate
+Ctrl + D
+</code></pre>
+
+<h2>Virtual Environment Location</h2>
+
+<p>Default directories:</p>
+
+<ul>
+<li>Linux/macOS: <code>~/.cache/pypoetry/virtualenvs/</code></li>
+<li>Windows: <code>%APPDATA%\pypoetry\virtualenvs\</code></li>
+</ul>
+
+<h3>Create Environment Inside Project</h3>
+
+<pre><code>poetry config virtualenvs.in-project true</code></pre>
+
+<p>This creates:</p>
+
+<pre><code>my_project/
+├── .venv/
+├── pyproject.toml
+</code></pre>
+
+<h2>Check Environment Information</h2>
+
+<pre><code>poetry env info</code></pre>
+
+<h2>Recreate Environment</h2>
+
+<pre><code>poetry env remove python
+poetry install
+</code></pre>
+
+<h2>Typical Workflow</h2>
+
+<pre><code>cd my_project
+poetry shell
+code .
+pytest
+python main.py
+poetry add requests
+exit
+</code></pre>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

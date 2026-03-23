@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Developer Guidelines</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+
+<style>
+/* Icon + title layout */
+.topic-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.topic-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.topic-title {
+  margin: 0;
+  font-size: 1.2em;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Animated Background -->
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<!-- Shapes -->
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<!-- Floating Particles -->
+
+<div id="particles"></div>
+
+<!-- Navigation -->
+
+<nav id="navbar">
+<div class="nav-container">
+
+<a href="#home" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ff0000"/>
+<stop offset="100%" style="stop-color:#1900ff"/>
+</linearGradient>
+</defs>
+
+<polygon points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home" class="nav-link">Home</a></li>
+<li><a href="#topics" class="nav-link">Topics</a></li>
+<li><a href="#sites" class="nav-link">Websites</a></li>
+<li><a href="#cheatsheets" class="nav-link">Cheatsheets</a></li>
+<li><a href="#about" class="nav-link">About</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1 class="glitch-text" data-text="DEVELOPER GUIDE">
+DEVELOPER GUIDE
+</h1>
+
+<p class="subtitle">
+Guidelines for development tools, workflows and environments
+</p>
+
+</div>
+
+<div class="cta-container">
+<a href="#topics" class="cta-button cta-primary">Browse Topics</a>
+</div>
+
+</section>
+
+<!-- DOCUMENTATION TOPICS -->
+<section class="features" id="topics" style="padding: 1%;">
+<h2 class="section-title">Documentation Topics</h2>
+<div class="topics-grid">
+
+<a class="topic-card" href="doc_topics/1.remote.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=ssh.com&sz=128">
+<h3 class="topic-title">Remote Connection</h3>
+</div>
+<p>Connecting to servers and remote environments.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/2.newrepo.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://github.githubassets.com/favicons/favicon.svg">
+<h3 class="topic-title">New Repository</h3>
+</div>
+<p>Creating repositories in GitHub.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/3.repopush.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=git-scm.com&sz=128">
+<h3 class="topic-title">Git Push</h3>
+</div>
+<p>Pushing code to GitHub.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/4.pull.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=git-scm.com&sz=128">
+<h3 class="topic-title">Git Pull</h3>
+</div>
+<p>Updating local repositories from remote.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/5.poetry.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=python-poetry.org&sz=128">
+<h3 class="topic-title">Poetry</h3>
+</div>
+<p>Managing Python dependencies.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/6.uv.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=https://docs.astral.sh/uv/&sz=128">
+<h3 class="topic-title">UV</h3>
+</div>
+<p>Fast modern Python package manager.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/7.workflow.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=workflowy.com&sz=128">
+<h3 class="topic-title">Advanced Workflow</h3>
+</div>
+<p>Improved development workflows.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/8.reveal.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=revealjs.com&sz=128">
+<h3 class="topic-title">Reveal.js</h3>
+</div>
+<p>Presentation creation with Reveal.js.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/9.lazygit.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=jesseduffield.com&sz=128">
+<h3 class="topic-title">LazyGit</h3>
+</div>
+<p>Terminal UI for Git operations.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/10.pyenv.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=stackoverflow.com&sz=128">
+<h3 class="topic-title">PYENV</h3>
+</div>
+<p>Managing multiple Python versions.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/11.zellij.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=zellij.dev&sz=128">
+<h3 class="topic-title">Zellij</h3>
+</div>
+<p>Terminal workspace and session manager.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/12.docker.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=docker.com&sz=128">
+<h3 class="topic-title">Docker</h3>
+</div>
+<p>Package and run applications in containers.</p>
+</a>
+
+<a class="topic-card" href="doc_topics/13.cookiecutter.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=cookiecutter.io&sz=128">
+<h3 class="topic-title">Cookiecutter</h3>
+</div>
+<p>Generating projects from templates in one command.</p>
+</a>
+
+</div>
+</section>
+
+<br><br>
+
+<!-- WEBSITES SECTION -->
+<section class="features" id="sites" style="padding: 1%;">
+<h2 class="section-title">Websites</h2>
+<div class="topics-grid">
+
+<a class="topic-card" href="sites/ai.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=openai.com&sz=128">
+<h3 class="topic-title">Artificial Intelligence</h3>
+</div>
+<p>AI tools</p>
+</a>
+
+<a class="topic-card" href="sites/cheatsheets.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=cheatography.com&sz=128">
+<h3 class="topic-title">Cheatsheets</h3>
+</div>
+<p>Cheatsheets</p>
+</a>
+
+<a class="topic-card" href="sites/pyhton.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=python.org&sz=128">
+<h3 class="topic-title">Python</h3>
+</div>
+<p>Python tools and workflows</p>
+</a>
+
+<a class="topic-card" href="sites/interview.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=interviewbit.com&sz=128">
+<h3 class="topic-title">Interview</h3>
+</div>
+<p>Interview preparation and tools</p>
+</a>
+
+<a class="topic-card" href="sites/online_courses.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=coursera.org&sz=128">
+<h3 class="topic-title">Online Courses</h3>
+</div>
+<p>Sites with online courses</p>
+</a>
+
+<a class="topic-card" href="sites/github.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://github.githubassets.com/favicons/favicon.svg">
+<h3 class="topic-title">GitHub</h3>
+</div>
+<p>GitHub tools</p>
+</a>
+
+<a class="topic-card" href="sites/latex.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=overleaf.com&sz=128">
+<h3 class="topic-title">LaTeX</h3>
+</div>
+<p>Sites to write LaTeX</p>
+</a>
+
+<a class="topic-card" href="sites/obsidian.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=obsidian.md&sz=128">
+<h3 class="topic-title">Obsidian</h3>
+</div>
+<p>Note taking tool</p>
+</a>
+
+<a class="topic-card" href="sites/document_conversion.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=pdf24.org&sz=128">
+<h3 class="topic-title">Document Conversion</h3>
+</div>
+<p>Convert documents to other types</p>
+</a>
+
+<a class="topic-card" href="sites/translate.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=deepl.com&sz=128">
+<h3 class="topic-title">Translate</h3>
+</div>
+<p>Sites for translation</p>
+</a>
+
+<a class="topic-card" href="sites/statistics.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=seeing-theory.brown.edu&sz=128">
+<h3 class="topic-title">Statistics</h3>
+</div>
+<p>Sites for statistics & probability</p>
+</a>
+
+<a class="topic-card" href="sites/remote_ssh.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=bitvise.com&sz=128">
+<h3 class="topic-title">Remote SSH</h3>
+</div>
+<p>Remote connection via SSH</p>
+</a>
+
+<a class="topic-card" href="sites/extra.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=staying.fun&sz=128">
+<h3 class="topic-title">Extra</h3>
+</div>
+<p>Extra sites & tools</p>
+</a>
+
+<a class="topic-card" href="sites/secure_password.html">
+<div class="topic-header">
+<img class="topic-icon" src="../images/logos/faviconV2.png">
+<h3 class="topic-title">Secure Password</h3>
+</div>
+<p>Save Passwords Safely</p>
+</a>
+
+</div>
+</section>
+
+<br><br>
+
+<!-- CHEATSHEETS -->
+<section class="features" id="cheatsheets" style="padding: 1%;">
+<h2 class="section-title">Cheatsheets</h2>
+<div class="topics-grid">
+
+<a class="topic-card" href="cheatsheets/git.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=git-scm.com&sz=128">
+<h3 class="topic-title">Git</h3>
+</div>
+<p>Useful Git commands</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/data_viz.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=datavizproject.com&sz=128">
+<h3 class="topic-title">Data Visualizations</h3>
+</div>
+<p>Data Visualization Options</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/tmux.html">
+<div class="topic-header">
+<img class="topic-icon" src="../images/logos/tmux.svg">
+<h3 class="topic-title">TMUX</h3>
+</div>
+<p>tmux useful commands</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/docker.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=docker.com&sz=128">
+<h3 class="topic-title">Docker</h3>
+</div>
+<p>What is Docker?</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/keyboard.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=keyboard.com&sz=128">
+<h3 class="topic-title">Keyboard Shortcuts</h3>
+</div>
+<p>Useful Keyboard Shortcuts</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/machine_learning.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=tensorflow.org&sz=128">
+<h3 class="topic-title">Machine Learning</h3>
+</div>
+<p>Machine Learning Cheatsheet</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/pandas.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=pandas.pydata.org&sz=128">
+<h3 class="topic-title">Pandas</h3>
+</div>
+<p>Pandas Cheatsheet</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/regression.html">
+<div class="topic-header">
+<img class="topic-icon" src="https://www.google.com/s2/favicons?domain=statistics.com&sz=128">
+<h3 class="topic-title">Regression</h3>
+</div>
+<p>Regression Cheatsheet</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/neural_network.html">
+  <div class="topic-header">
+    <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=pytorch.org&sz=128" alt="Neural Network Icon">
+    <h3 class="topic-title">Neural Network</h3>
+  </div>
+  <p>Neural Network Cheatsheet</p>
+</a>
+
+<a class="topic-card" href="cheatsheets/deep_learning.html">
+  <div class="topic-header">
+    <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=keras.io&sz=128" alt="Deep Learning Icon">
+    <h3 class="topic-title">Deep Learning</h3>
+  </div>
+  <p>Deep Learning Cheatsheet</p>
+</a>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2 class="section-title">About This Guide</h2>
+
+<div class="about-content">
+
+<div class="about-text">
+
+<h2>Developer Workflow Documentation</h2>
+
+<p>
+This documentation contains guidelines for working with modern development tools including Git workflows, Python environments, terminal tooling and productivity utilities.
+</p>
+
+<p>
+Each topic contains detailed instructions and examples for daily development tasks.
+</p>
+
+</div>
+
+<div class="about-visual">
+<div class="about-graphic">
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<p class="copyright">
+Developer Guidelines Documentation
+</p>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

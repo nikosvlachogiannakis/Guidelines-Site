@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Install Local Python with pyenv</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#install" class="nav-link">Install</a></li>
+<li><a href="../main.html#example" class="nav-link">Example</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">Install Local Python Versions Using pyenv</h1>
+
+<div class="cheatsheet-stack">
+  <img src="../images/install_local_python.gif" alt="pyenv installations">
+</div>
+
+<div class="topic-content">
+
+<h2 id="install">Download pyenv</h2>
+
+<pre><code class="language-bash">curl -fsSL https://pyenv.run | bash
+</code></pre>
+
+<h2>Add Configuration to Shell</h2>
+
+<p>Add the following lines to <strong>~/.bashrc</strong>:</p>
+
+<pre><code class="language-bash">echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init - bash)"' >> ~/.bashrc
+</code></pre>
+
+<p>And also add them to <strong>~/.profile</strong>:</p>
+
+<pre><code class="language-bash">echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+echo 'eval "$(pyenv init - bash)"' >> ~/.profile
+</code></pre>
+
+<h2>Restart Shell</h2>
+
+<pre><code class="language-bash">exec "$SHELL"</code></pre>
+
+<h2 id="example">Example</h2>
+
+<h3>Check Installed Python Versions</h3>
+
+<pre><code class="language-bash">pyenv versions
+</code></pre>
+
+<p>Example output:</p>
+
+<pre><code class="language-bash">* system (set by /home/nikosv/.pyenv/version)
+</code></pre>
+
+<h3>List Available Python Versions</h3>
+
+<pre><code class="language-bash">pyenv install -l | less
+</code></pre>
+
+<h3>Install Python 3.12.12</h3>
+
+<pre><code class="language-bash">pyenv install 3.12.12
+</code></pre>
+
+<h3>Verify Installed Versions</h3>
+
+<pre><code class="language-bash">pyenv versions
+</code></pre>
+
+<p>Output example:</p>
+
+<pre><code class="language-bash">* system (set by /home/nikosv/.pyenv/version)
+3.12.12
+</code></pre>
+
+<h3>Use Python 3.12.12 in a Project</h3>
+
+<ol>
+<li>Enter project directory:
+<pre><code class="language-bash">cd myproject/</code></pre>
+</li>
+<li>Check current Python version:
+<pre><code class="language-bash">python3 --version</code></pre>Example: <code>Python 3.10.12</code>
+</li>
+<li>Check current Python prefix:
+<pre><code class="language-bash">pyenv prefix</code></pre>Output: <code>/usr</code>
+</li>
+<li>Set local Python version to 3.12.12:
+<pre><code class="language-bash">pyenv local 3.12.12</code></pre>
+</li>
+<li>Reload shell configuration:
+<pre><code class="language-bash">source ~/.bashrc</code></pre>
+</li>
+<li>Verify project Python versions:
+<pre><code class="language-bash">pyenv versions
+</code></pre>
+Output example:
+<pre><code class="language-bash">system
+* 3.12.12 (set by /home/.../.python-version)
+</code></pre>
+Also check prefix:
+<pre><code class="language-bash">pyenv prefix</code></pre>
+Output:
+<pre><code class="language-bash">/home/nikosv/.pyenv/versions/3.12.12</code></pre>
+Check local Python version:
+<pre><code class="language-bash">python3 --version</code></pre>
+Output: <pre><code>Python 3.12.12</code></pre>
+</li>
+<li>Check global Python version outside project:
+<pre><code class="language-bash">cd python3 --version
+pyenv prefix
+</code></pre>
+Output example:
+<pre><code class="language-bash">Python 3.10.12
+/usr
+</code></pre>
+</li>
+</ol>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

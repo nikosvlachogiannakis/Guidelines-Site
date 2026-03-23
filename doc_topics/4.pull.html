@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pulling Changes and Handling Conflicts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+<div class="shape shape-circle"></div>
+<div class="shape shape-triangle"></div>
+<div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+
+<div class="nav-container">
+
+<a href="../main.html" class="logo-link">
+
+<svg class="logo-svg" viewBox="0 0 40 40">
+
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#FF5E00"/>
+<stop offset="100%" style="stop-color:#00B2FF"/>
+</linearGradient>
+</defs>
+
+<polygon
+points="20,2 38,14 38,26 20,38 2,26 2,14"
+fill="none"
+stroke="url(#logoGradient)"
+stroke-width="2"
+/>
+
+<circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+</svg>
+
+<span class="logo-text">Guidelines</span>
+
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="../main.html" class="nav-link">Home</a></li>
+<li><a href="../main.html#topics" class="nav-link">Topics</a></li>
+<li><a href="../main.html#about" class="nav-link">About</a></li>
+</ul>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</nav>
+
+<main>
+
+<section class="topics">
+
+<h1 class="section-title">Pulling Changes and Handling Conflicts</h1>
+
+<div class="topic-content">
+
+<h2>Basic Concept</h2>
+
+<p>
+When collaborators push changes to GitHub, your <strong>local repo</strong> becomes “behind” the <strong>remote</strong> version.
+You'll want to:
+</p>
+
+<ul>
+<li>Fetch their updates</li>
+<li>Review what changed</li>
+<li>Merge or rebase safely</li>
+</ul>
+
+<p>
+All without overwriting your own uncommitted work.
+</p>
+
+<h2>LazyGit Workflow</h2>
+
+<h3>Summary Table</h3>
+
+<table border="1" cellspacing="0" cellpadding="12" style="border-collapse: collapse; width: 100%; text-align: center; font-family: Arial, sans-serif;">
+
+<thead>
+<tr>
+<th style="padding: 12px 20px;">Step</th>
+<th style="padding: 12px 20px;">Action</th>
+<th style="padding: 12px 20px;">Key</th>
+<th style="padding: 12px 20px;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="padding: 12px 20px;">1</td>
+<td style="padding: 12px 20px;">Open LazyGit</td>
+<td style="padding: 12px 20px;">lazygit</td>
+<td style="padding: 12px 20px;">Run <code>lazygit</code> inside the repository</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">2</td>
+<td style="padding: 12px 20px;">Fetch updates</td>
+<td style="padding: 12px 20px;">f</td>
+<td style="padding: 12px 20px;">Fetch remote changes without merging</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">3</td>
+<td style="padding: 12px 20px;">Pull changes</td>
+<td style="padding: 12px 20px;">p</td>
+<td style="padding: 12px 20px;">Pull changes from GitHub</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">4</td>
+<td style="padding: 12px 20px;">View conflicts</td>
+<td style="padding: 12px 20px;">—</td>
+<td style="padding: 12px 20px;"><strong><span style="color:red">Conflicted files appear in red</span></strong></td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">5</td>
+<td style="padding: 12px 20px;">Resolve conflicts</td>
+<td style="padding: 12px 20px;">m</td>
+<td style="padding: 12px 20px;">Choose conflict resolution strategy</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">6</td>
+<td style="padding: 12px 20px;">Use ours</td>
+<td style="padding: 12px 20px;">y</td>
+<td style="padding: 12px 20px;">Keep your local version</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">7</td>
+<td style="padding: 12px 20px;">Use theirs</td>
+<td style="padding: 12px 20px;">t</td>
+<td style="padding: 12px 20px;">Keep remote version</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">8</td>
+<td style="padding: 12px 20px;">Use both</td>
+<td style="padding: 12px 20px;">b</td>
+<td style="padding: 12px 20px;">Combine both versions</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">9</td>
+<td style="padding: 12px 20px;">Edit manually</td>
+<td style="padding: 12px 20px;">e</td>
+<td style="padding: 12px 20px;">Edit conflict markers manually</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">10</td>
+<td style="padding: 12px 20px;">Stage resolved</td>
+<td style="padding: 12px 20px;">space</td>
+<td style="padding: 12px 20px;">Mark conflict as resolved</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">11</td>
+<td style="padding: 12px 20px;">Commit merge</td>
+<td style="padding: 12px 20px;">c</td>
+<td style="padding: 12px 20px;">Save merge resolution</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 20px;">12</td>
+<td style="padding: 12px 20px;">Push changes</td>
+<td style="padding: 12px 20px;">P</td>
+<td style="padding: 12px 20px;">Upload to GitHub</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2>Full LazyGit Workflow</h2>
+
+<h3>1. Open LazyGit</h3>
+
+<pre><code>lazygit</code></pre>
+
+<p>You will see panels for branches, files and commits.</p>
+
+<h3>2. Fetch Updates</h3>
+
+<p>Press:</p>
+
+<pre><code>f</code></pre>
+
+<p>This fetches remote updates without merging them.</p>
+
+<h3>3. Pull Changes</h3>
+
+<p>Press:</p>
+
+<pre><code>p</code></pre>
+
+<p>Select the remote and branch.</p>
+
+<p>If there are no conflicts, Git merges automatically.</p>
+
+<h3>Handling Conflicts</h3>
+
+<p>
+Conflicted files appear in <span style="color:red">red</span>.
+</p>
+
+<p>Use:</p>
+
+<ul>
+<li><strong>m</strong> → Open merge menu</li>
+<li><strong>e</strong> → Edit file manually</li>
+<li><strong>d</strong> → View diff</li>
+</ul>
+
+<h3>Resolve Conflicts</h3>
+
+<ul>
+
+<li><strong>y</strong> → Use <strong>ours</strong></li>
+
+<li><strong>t</strong> → Use <strong>theirs</strong></li>
+
+<li><strong>b</strong> → Use <strong>both</strong></li>
+
+<li><strong>e</strong> → Manual edit</li>
+
+</ul>
+
+<p>After fixing the file:</p>
+
+<pre><code>space</code></pre>
+
+<p>This stages the resolved file.</p>
+
+<h3>Commit the Merge</h3>
+
+<pre><code>c</code></pre>
+
+<p>This commits the resolved merge.</p>
+
+<h3>Push Changes</h3>
+
+<p>Press:</p>
+
+<pre><code>P</code></pre>
+
+<p>This pushes the branch to GitHub.</p>
+
+<h2>Pro Tips</h2>
+
+<ul>
+
+<li><strong>h</strong> → View commit history</li>
+
+<li><strong>u</strong> → Undo last action</li>
+
+<li><strong>x</strong> → Abort merge or rebase</li>
+
+<li><strong>b</strong> → Switch branches</li>
+
+</ul>
+
+<h2 style="color:red">Without LazyGit</h2>
+
+<h3>1. Save your current work</h3>
+
+<pre><code>git status</code></pre>
+
+If needed:
+
+<pre><code>git add .
+git commit -m "Brief explanation of what changes were made"
+</code></pre>
+
+Or stash:
+
+<pre><code>git stash</code></pre>
+
+<h3>2. Fetch remote changes</h3>
+
+<pre><code>git fetch origin</code></pre>
+
+<h3>3. See what changed</h3>
+
+<pre><code>git diff main origin/main</code></pre>
+
+To view commits:
+
+<pre><code>git log main..origin/main --oneline</code></pre>
+
+<h3>4. Merge changes</h3>
+
+<pre><code>git pull origin main</code></pre>
+
+Equivalent to:
+
+<pre><code>git fetch origin
+git merge origin/main
+</code></pre>
+
+For cleaner history:
+
+<pre><code>git pull --rebase origin main</code></pre>
+
+<h2>Pull Only Specific Commits</h2>
+
+<pre><code>git fetch origin
+git cherry-pick &lt;commit-hash&gt;
+</code></pre>
+
+<h2>Restore Stashed Work</h2>
+
+<pre><code>git stash pop</code></pre>
+
+<h2>Force Reset Local Repo</h2>
+
+<p>If you want to completely discard local changes:</p>
+
+<pre><code>git fetch origin
+git reset --hard origin/main
+git clean -fd
+</code></pre>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>

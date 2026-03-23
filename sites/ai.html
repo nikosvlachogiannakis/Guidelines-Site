@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artificial Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+  <div class="shape shape-circle"></div>
+  <div class="shape shape-triangle"></div>
+  <div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../main.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 40 40">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF5E00"/>
+            <stop offset="100%" style="stop-color:#00B2FF"/>
+          </linearGradient>
+        </defs>
+        <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+        <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+      </svg>
+      <span class="logo-text">Guidelines</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../main.html" class="nav-link">Home</a></li>
+      <li><a href="../main.html#template" class="nav-link">Template</a></li>
+      <li><a href="../main.html#workflow" class="nav-link">Workflow</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="topics">
+
+<h1 class="section-title">Artificial Intelligence</h1>
+
+<!-- <a class="topic-card" href="summary.html">
+<h3>0. Summary</h3>
+<p>Overview of the workflow and tools.</p>
+</a> -->
+
+<div class="topics-grid">
+
+  <!-- Inline CSS for topic header layout -->
+  <style>
+    /* Flex layout for icon + site name */
+    .topic-header {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* space between icon and title */
+      margin-bottom: 6px;
+    }
+
+    .topic-icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .topic-title {
+      margin: 0;
+      font-size: 1.4em;
+    }
+  </style>
+
+  <a class="topic-card" href="https://copilot.microsoft.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=128" alt="Copilot Icon">
+      <h3 class="topic-title">Copilot</h3>
+    </div>
+    <p>AI coding assistant by Microsoft.</p>
+  </a>
+
+  <a class="topic-card" href="https://chatgpt.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128" alt="ChatGPT Icon">
+      <h3 class="topic-title">ChatGPT</h3>
+    </div>
+    <p>OpenAI conversational AI platform.</p>
+  </a>
+
+  <a class="topic-card" href="https://gemini.google.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128" alt="Gemini Icon">
+      <h3 class="topic-title">Google Gemini</h3>
+    </div>
+    <p>Google’s AI assistant platform.</p>
+  </a>
+
+  <a class="topic-card" href="https://manus.im/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=manus.im&sz=128" alt="Manus Icon">
+      <h3 class="topic-title">Manus</h3>
+    </div>
+    <p>AI-powered writing and summarization.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.chatpdf.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=chatpdf.com&sz=128" alt="ChatPDF Icon">
+      <h3 class="topic-title">ChatPDF</h3>
+    </div>
+    <p>Ask questions about your PDFs.</p>
+  </a>
+
+  <a class="topic-card" href="https://chat.deepseek.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=chat.deepseek.com&sz=128" alt="DeepSeek Icon">
+      <h3 class="topic-title">DeepSeek</h3>
+    </div>
+    <p>AI-powered deep search platform.</p>
+  </a>
+
+  <a class="topic-card" href="https://quillbot.com/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=quillbot.com&sz=128" alt="QuillBot Icon">
+      <h3 class="topic-title">QuillBot</h3>
+    </div>
+    <p>AI paraphrasing and writing assistant.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.devzero.io/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=devzero.io&sz=128" alt="DevZero Icon">
+      <h3 class="topic-title">DevZero</h3>
+    </div>
+    <p>Remote development environments for teams.</p>
+  </a>
+
+  <a class="topic-card" href="https://v0.app/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=v0.app&sz=128" alt="V0 Icon">
+      <h3 class="topic-title">V0</h3>
+    </div>
+    <p>Platform to build no-code apps quickly.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.perplexity.ai/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128" alt="Perplexity Icon">
+      <h3 class="topic-title">Perplexity AI</h3>
+    </div>
+    <p>Answer questions using AI-powered search.</p>
+  </a>
+
+  <a class="topic-card" href="https://antigravity.google/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=antigravity.google&sz=128" alt="Google Antigravity Icon">
+      <h3 class="topic-title">Google Antigravity</h3>
+    </div>
+    <p>Google’s experimental AI lab.</p>
+  </a>
+
+  <a class="topic-card" href="https://www.napkin.ai/" target="_blank">
+    <div class="topic-header">
+      <img class="topic-icon" src="https://www.google.com/s2/favicons?domain=napkin.ai&sz=128" alt="Napkin AI Icon">
+      <h3 class="topic-title">Napkin AI</h3>
+    </div>
+    <p>Summarize articles and websites with AI.</p>
+  </a>
+
+</div>
+</section>
+</main>
+
+<script src="../script.js"></script>
+</body>
+</html>
