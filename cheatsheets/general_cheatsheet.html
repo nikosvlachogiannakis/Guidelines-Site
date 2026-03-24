@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artificial Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+
+<div class="shapes-container">
+  <div class="shape shape-circle"></div>
+  <div class="shape shape-triangle"></div>
+  <div class="shape shape-square"></div>
+</div>
+
+<div id="particles"></div>
+
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="../main.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 40 40">
+        <defs>
+        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ff0000"/>
+        <stop offset="100%" style="stop-color:#1900ff"/>
+        </linearGradient>
+        </defs>
+
+        <polygon points="20,2 38,14 38,26 20,38 2,26 2,14"
+        fill="none"
+        stroke="url(#logoGradient)"
+        stroke-width="2"
+        />
+
+        <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+
+        </svg>
+
+        <span class="logo-text">Guidelines</span>
+
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+        <li><a href="../main.html#home" class="nav-link">Home</a></li>
+        <li><a href="../main.html#topics" class="nav-link">Topics</a></li>
+        <li><a href="../main.html#sites" class="nav-link">Websites</a></li>
+        <li><a href="../main.html#cheatsheets" class="nav-link">Cheatsheets</a></li>
+        <li><a href="../main.html#about" class="nav-link">About</a></li>
+        </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="topics">
+
+<h1 class="section-title" style="color: #00e1ff;">Terminal Commands</h1>
+
+<section class="terminal-cheatsheet">
+
+  <h2>File & Directory Management</h2>
+
+  <br>
+
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">ls</code></pre></td><td>List files in current directory</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">ls -la</code></pre></td><td>List all files with details</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">cd folder_name</code></pre></td><td>Change directory</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">cd</code></pre></td><td>Go to home directory</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">cd ..</code></pre></td><td>Go up one directory</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">cd -</code></pre></td><td>Go to previous directory</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">mkdir folder_name</code></pre></td><td>Create a new folder</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">rm file</code></pre></td><td>Delete file</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">rm -rf folder</code></pre></td><td>Force delete folder and contents</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">cp source dest/</code></pre></td><td>Copy file/folder</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">mv old new</code></pre></td><td>Move or rename file/folder</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">touch file.txt</code></pre></td><td>Create empty file</td></tr>
+  </table>
+
+  <h2>File Viewing & Editing</h2>
+  
+  <br>
+
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">cat file.txt</code></pre></td><td>Show file contents</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">less file.txt</code></pre></td><td>Scrollable view of file</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">nano file.txt</code></pre></td><td>Edit file in nano editor</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">code .</code></pre></td><td>Open folder in VS Code (if installed)</td></tr>
+  </table>
+
+  <h2>Search & Navigation</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">find . -name '*.py'</code></pre></td><td>Find all .py files</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">grep "pattern" file.txt</code></pre></td><td>Search for text in a file</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">grep -r "text" folder/</code></pre></td><td>Recursive search in folder</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">pwd</code></pre></td><td>Show current directory</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">history</code></pre></td><td>View command history</td></tr>
+  </table>
+
+  <h2>System Utilities</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">whoami</code></pre></td><td>Show current user</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">df -h</code></pre></td><td>Show disk usage</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">free -h</code></pre></td><td>Show memory usage</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">top / htop</code></pre></td><td>Process monitor</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">uptime</code></pre></td><td>System uptime</td></tr>
+  </table>
+
+  <h2>Package Management (APT)</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">sudo apt update</code></pre></td><td>Refresh package index</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">sudo apt upgrade</code></pre></td><td>Upgrade installed packages</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">sudo apt install pkgname</code></pre></td><td>Install package</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">sudo apt remove pkgname</code></pre></td><td>Remove package</td></tr>
+  </table>
+
+  <h2>Python & pyenv</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">python3 --version</code></pre></td><td>Show system Python version</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">pyenv install 3.11.13</code></pre></td><td>Install Python version</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">pyenv global 3.11.13</code></pre></td><td>Set global version</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">pyenv local 3.11.13</code></pre></td><td>Set local version</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">pyenv versions</code></pre></td><td>List installed versions</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">pyenv which python</code></pre></td><td>Show Python path</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">poetry init</code></pre></td><td>Create project</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">poetry env use $(pyenv which python)</code></pre></td><td>Link Poetry to pyenv</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">poetry env list</code></pre></td><td>List environments</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">poetry env remove &lt;env&gt;</code></pre></td><td>Remove environment</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">poetry add &lt;package&gt;</code></pre></td><td>Add dependency</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">poetry install</code></pre></td><td>Install dependencies</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">poetry shell</code></pre></td><td>Activate environment</td></tr>
+  </table>
+
+  <h2>SSH & Remote Access</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">ssh user@host</code></pre></td><td>Connect to remote machine</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">ssh -i ~/.ssh/id_rsa user@host</code></pre></td><td>Use SSH key</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">ssh-keygen -t ed25519</code></pre></td><td>Generate SSH key</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">cat ~/.ssh/id_ed25519.pub</code></pre></td><td>Show public key</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">scp file user@host:/path</code></pre></td><td>Upload file</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">scp user@host:/file ./</code></pre></td><td>Download file</td></tr>
+  </table>
+
+  <h2>FTP & File Transfer</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">ftp host</code></pre></td><td>Connect to FTP server</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">sftp user@host</td><td>Secure FTP</code></pre></td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">rsync -avz file user@host:/path</code></pre></td><td>Sync upload</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">rsync -avz user@host:/path ./</code></pre></td><td>Sync download</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">mput *.txt</code></pre></td><td>Upload multiple files</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">mget *.txt</code></pre></td><td>Download multiple files</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">put file.txt</code></pre></td><td>Upload file</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">get file.txt</code></pre></td><td>Download file</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">bye</code></pre></td><td>Exit FTP</td></tr>
+  </table>
+
+  <h2>Shortcuts</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td>Ctrl + C</td><td>Cancel command</td></tr>
+    <tr><td>Ctrl + D</td><td>Exit terminal</td></tr>
+    <tr><td>Ctrl + L</td><td>Clear screen</td></tr>
+    <tr><td>↑ / ↓</td><td>History navigation</td></tr>
+    <tr><td>Tab</td><td>Autocomplete</td></tr>
+    <tr><td>!!</td><td>Repeat last command</td></tr>
+  </table>
+
+  <h2>Git Essentials - Part 1</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git init</code></pre></td><td>Initialize repo</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git clone &lt;url&gt;</code></pre></td><td>Clone repo</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git status</code></pre></td><td>Status</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git add .</code></pre></td><td>Stage changes</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git commit -m "msg"</code></pre></td><td>Commit changes</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git diff</code></pre></td><td>Show changes</td></tr>
+  </table>
+
+
+  <h2>Git Essentials - Part 2</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git log</code></pre></td><td>History</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git branch</code></pre></td><td>List branches</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git checkout -b branch</code></pre></td><td>Create branch</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git merge branch</code></pre></td><td>Merge branch</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git pull</code></pre></td><td>Pull changes</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git push</code></pre></td><td>Push changes</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git stash</code></pre></td><td>Save changes</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git stash pop</code></pre></td><td>Restore changes</td></tr>
+  </table>
+
+</section>
+</main>
+
+<script src="../script.js"></script>
+</body>
+</html>
