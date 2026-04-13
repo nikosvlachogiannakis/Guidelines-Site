@@ -70,6 +70,21 @@
 
 <section class="terminal-cheatsheet">
 
+  <h2>System Utilities</h2>
+  
+  <br>
+  
+  <table>
+    <tr><th>Command</th><th>Description</th></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">whoami</code></pre></td><td>Show current user</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">df -h</code></pre></td><td>Show disk usage</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">free -h</code></pre></td><td>Show memory usage</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">htop / nvtop</code></pre></td><td>Process monitor</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">uptime</code></pre></td><td>System uptime</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">psensor</code></pre></td><td>Temperatures and fans</td></tr>
+    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">neofetch</code></pre></td><td>System info</td></tr>
+  </table>
+
   <h2>File & Directory Management</h2>
 
   <br>
@@ -102,7 +117,7 @@
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">code .</code></pre></td><td>Open folder in VS Code (if installed)</td></tr>
   </table>
 
-  <h2>Search & Navigation</h2>
+  <h2>Search</h2>
   
   <br>
   
@@ -113,19 +128,6 @@
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">grep -r "text" folder/</code></pre></td><td>Recursive search in folder</td></tr>
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">pwd</code></pre></td><td>Show current directory</td></tr>
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">history</code></pre></td><td>View command history</td></tr>
-  </table>
-
-  <h2>System Utilities</h2>
-  
-  <br>
-  
-  <table>
-    <tr><th>Command</th><th>Description</th></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">whoami</code></pre></td><td>Show current user</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">df -h</code></pre></td><td>Show disk usage</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">free -h</code></pre></td><td>Show memory usage</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">top / htop</code></pre></td><td>Process monitor</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">uptime</code></pre></td><td>System uptime</td></tr>
   </table>
 
   <h2>Package Management (APT)</h2>
@@ -175,23 +177,6 @@
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">scp user@host:/file ./</code></pre></td><td>Download file</td></tr>
   </table>
 
-  <h2>FTP & File Transfer</h2>
-  
-  <br>
-  
-  <table>
-    <tr><th>Command</th><th>Description</th></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">ftp host</code></pre></td><td>Connect to FTP server</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">sftp user@host</td><td>Secure FTP</code></pre></td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">rsync -avz file user@host:/path</code></pre></td><td>Sync upload</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">rsync -avz user@host:/path ./</code></pre></td><td>Sync download</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">mput *.txt</code></pre></td><td>Upload multiple files</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">mget *.txt</code></pre></td><td>Download multiple files</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">put file.txt</code></pre></td><td>Upload file</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">get file.txt</code></pre></td><td>Download file</td></tr>
-    <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">bye</code></pre></td><td>Exit FTP</td></tr>
-  </table>
-
   <h2>Shortcuts</h2>
   
   <br>
@@ -206,7 +191,7 @@
     <tr><td>!!</td><td>Repeat last command</td></tr>
   </table>
 
-  <h2>Git Essentials - Part 1</h2>
+  <h2>Git Commands</h2>
   
   <br>
   
@@ -218,15 +203,6 @@
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git add .</code></pre></td><td>Stage changes</td></tr>
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git commit -m "msg"</code></pre></td><td>Commit changes</td></tr>
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git diff</code></pre></td><td>Show changes</td></tr>
-  </table>
-
-
-  <h2>Git Essentials - Part 2</h2>
-  
-  <br>
-  
-  <table>
-    <tr><th>Command</th><th>Description</th></tr>
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git log</code></pre></td><td>History</td></tr>
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git branch</code></pre></td><td>List branches</td></tr>
     <tr><td><pre style="background: transparent; border: none;"><code style="all: unset;">git checkout -b branch</code></pre></td><td>Create branch</td></tr>
