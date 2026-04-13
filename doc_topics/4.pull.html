@@ -100,9 +100,57 @@ You'll want to:
 All without overwriting your own uncommitted work.
 </p>
 
-<h2>LazyGit Workflow</h2>
+<hr>
 
-<h3>Summary Table</h3>
+<h2>Without LazyGit</h2>
+
+<h3>1. Save your current work</h3>
+
+<pre><code>git status</code></pre>
+
+<p>If needed:</p>
+
+<pre><code>git add .
+git commit -m "Brief explanation of what changes were made"
+</code></pre>
+
+<p>Or stash:</p>
+
+<pre><code>git stash</code></pre>
+
+<h3>2. Fetch remote changes</h3>
+
+<pre><code>git fetch origin</code></pre>
+
+<h3>3. See what changed (Optional)</h3>
+
+<pre><code>git diff main origin/main</code></pre>
+
+<p>To view commits:</p>
+
+<pre><code>git log main..origin/main --oneline</code></pre>
+
+<h3>4. Merge changes</h3>
+
+<pre><code>git pull origin main</code></pre>
+
+<p>Equivalent to:</p>
+
+<pre><code>git fetch origin
+git merge origin/main
+</code></pre>
+
+<h3>5. Restore Stashed Work</h3>
+
+<pre><code>git stash pop</code></pre>
+
+<p>Then go to VS Code and resolve conflicts and add, commit and push the changes to GitHub.</p>
+
+<hr>
+
+<h1>LazyGit Workflow</h1>
+
+<h2>Summary Table</h2>
 
 <table border="1" cellspacing="0" cellpadding="12" style="border-collapse: collapse; width: 100%; text-align: center; font-family: Arial, sans-serif;">
 
@@ -291,59 +339,11 @@ Conflicted files appear in <span style="color:red">red</span>.
 
 </ul>
 
-<h2 style="color:red">Without LazyGit</h2>
+<hr style="margin-top: 20px;">
 
-<h3>1. Save your current work</h3>
+<hr style="margin-top: 5px;">
 
-<pre><code>git status</code></pre>
-
-If needed:
-
-<pre><code>git add .
-git commit -m "Brief explanation of what changes were made"
-</code></pre>
-
-Or stash:
-
-<pre><code>git stash</code></pre>
-
-<h3>2. Fetch remote changes</h3>
-
-<pre><code>git fetch origin</code></pre>
-
-<h3>3. See what changed</h3>
-
-<pre><code>git diff main origin/main</code></pre>
-
-To view commits:
-
-<pre><code>git log main..origin/main --oneline</code></pre>
-
-<h3>4. Merge changes</h3>
-
-<pre><code>git pull origin main</code></pre>
-
-Equivalent to:
-
-<pre><code>git fetch origin
-git merge origin/main
-</code></pre>
-
-For cleaner history:
-
-<pre><code>git pull --rebase origin main</code></pre>
-
-<h2>Pull Only Specific Commits</h2>
-
-<pre><code>git fetch origin
-git cherry-pick &lt;commit-hash&gt;
-</code></pre>
-
-<h2>Restore Stashed Work</h2>
-
-<pre><code>git stash pop</code></pre>
-
-<h2>Force Reset Local Repo</h2>
+<h1>Force Reset Local Repo</h1>
 
 <p>If you want to completely discard local changes:</p>
 

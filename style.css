@@ -588,7 +588,7 @@ font-size:1.05rem;
 margin-top:40px;
 margin-bottom:10px;
 
-color:#1900ff;
+color:#00c3ff;
 
 font-family:'Orbitron',monospace;
 
@@ -597,13 +597,21 @@ font-family:'Orbitron',monospace;
 .topic-content h2{
 
 margin-top:30px;
-color:#ff0000;
+color:#00c3ff;
+
+}
+
+.topic-content h3{
+
+margin-top:30px;
+color:#00ffb3;
 
 }
 
 .topic-content p{
 
 margin:15px 0;
+font-weight: bold;
 
 }
 
@@ -611,6 +619,22 @@ margin:15px 0;
 
 margin-left:20px;
 margin-top:10px;
+font-weight: bold;
+
+}
+
+.topic-content ol{
+
+margin-left:20px;
+margin-top:10px;
+font-weight: bold;
+
+}
+
+.topic-content em{
+
+color: #ffee00;
+font-weight: bold;
 
 }
 
@@ -631,7 +655,7 @@ margin:20px 0;
 code{
 
 font-family:monospace;
-color:#1900ff;
+color:#00ff15;
 
 }
 

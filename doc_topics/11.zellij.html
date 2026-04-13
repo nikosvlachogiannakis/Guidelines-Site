@@ -82,15 +82,15 @@ stroke-width="2"
 
 <div class="topic-content">
 
-<h2 id="install">1️⃣ Check System Architecture</h2>
+<h1 id="install">Check System Architecture</h1>
 
 <pre><code class="language-bash">uname -s
 uname -m
 </code></pre>
 
-<p>If output shows <strong>OS: Linux</strong> and <strong>Architecture: x86_64</strong>, download:</p>
+<p>If output shows OS: Linux and Architecture: x86_64, download:</p>
 
-<p><strong>zellij-x86_64-unknown-linux-musl.tar.gz</strong> from <a href="https://github.com/zellij-org/zellij/releases">Zellij GitHub releases</a></p>
+<p>zellij-x86_64-unknown-linux-musl.tar.gz from <a href="https://github.com/zellij-org/zellij/releases">Zellij GitHub releases</a></p>
 
 <pre><code class="language-bash">curl -LO https://github.com/zellij-org/zellij/releases/download/v0.41.2/zellij-x86_64-unknown-linux-musl.tar.gz
 tar -xvf zellij*.tar.gz
@@ -110,40 +110,40 @@ zellij --version
 
 <hr>
 
-<h2 id="workflow">Zellij + Poetry Workflow Cheat Sheet</h2>
+<h1 id="workflow">Zellij + Poetry Workflow Cheat Sheet</h1>
 
-<h3>1️⃣ SSH and Start Zellij</h3>
+<h3>1. SSH and Start Zellij</h3>
 
 <pre><code class="language-bash">ssh user@remote-machine
 zellij
 </code></pre>
 
-<h3>2️⃣ Open Tabs or Panels</h3>
+<h3>2. Open Tabs or Panels</h3>
 
-<p><strong>Tabs (separate shell per script)</strong></p>
+<p>Tabs (separate shell per script)</p>
 <ul>
-<li>New tab: <strong>Ctrl+t → n</strong></li>
-<li>Next tab: <strong>Ctrl+t → Tab</strong></li>
-<li>Previous tab: <strong>Ctrl+g → Shift+Tab</strong></li>
-<li>Go to tab by number: <strong>Ctrl+g → 0-9</strong></li>
+<li>New tab: Ctrl+t → n</li>
+<li>Next tab: Ctrl+t → Tab</li>
+<li>Previous tab: Ctrl+g → Shift+Tab</li>
+<li>Go to tab by number: Ctrl+g → 0-9</li>
 </ul>
 
-<p><strong>Panels (split view in same tab)</strong></p>
+<p>Panels (split view in same tab)</p>
 <ul>
-<li>Split vertically: <strong>Ctrl+g → v</strong></li>
-<li>Split horizontally: <strong>Ctrl+g → h</strong></li>
-<li>Move between panels: <strong>Ctrl+g → arrow keys</strong></li>
-<li>Resize panels: <strong>Ctrl+g → hold Alt + arrow keys</strong></li>
+<li>Split vertically: Ctrl+g → v</li>
+<li>Split horizontally: Ctrl+g → h</li>
+<li>Move between panels: Ctrl+g → arrow keys</li>
+<li>Resize panels: Ctrl+g → hold Alt + arrow keys</li>
 </ul>
 
-<h3>3️⃣ Navigate to Poetry Project</h3>
+<h3>3. Navigate to Poetry Project</h3>
 
 <pre><code class="language-bash">cd ~/my_project
 </code></pre>
 
-<h3>4️⃣ Activate Poetry Environment</h3>
+<h3>4. Activate Poetry Environment</h3>
 
-<p><strong>Option A — Interactive Shell</strong></p>
+<p><span style="color:rgb(65, 140, 225)">Option A</span> — Interactive Shell</p>
 <pre><code class="language-bash">poetry shell
 python script1.py
 </code></pre>
@@ -153,45 +153,45 @@ python script1.py
 python script2.py
 </code></pre>
 
-<p><strong>Option B — Direct Run (non-interactive)</strong></p>
+<p><span style="color:rgb(65, 140, 225)">Option B</span> — Direct Run (non-interactive)</p>
 <pre><code class="language-bash">poetry run python script1.py
 poetry run python script2.py
 </code></pre>
 
-<h3>5️⃣ Detach and Reattach Sessions</h3>
+<h3>5. Detach and Reattach Sessions</h3>
 
 <ul>
-<li>Detach: <strong>Ctrl+g → d</strong></li>
+<li>Detach: Ctrl+g → d</li>
 <li>List sessions:
 <pre><code class="language-bash">zellij list-sessions</code></pre></li>
 <li>Reattach session:
 <pre><code class="language-bash">zellij attach -s session_name</code></pre></li>
 </ul>
 
-<h3>6️⃣ Optional Tips</h3>
+<h3>6. Optional Tips</h3>
 
 <ul>
-<li>Name tabs after scripts: <strong>Ctrl+g → n</strong></li>
-<li>Close tab/panel: <strong>Ctrl+g → x</strong></li>
+<li>Name tabs after scripts: Ctrl+g → n</li>
+<li>Close tab/panel: Ctrl+g → x</li>
 <li>Combine panels + tabs to run multiple scripts efficiently</li>
 </ul>
 
-<h3>7️⃣ Example Layouts</h3>
+<h3>7. Example Layouts</h3>
 
-<p><strong>Tabs:</strong></p>
+<p>Tabs:</p>
 <ul>
 <li>Tab 1: script1.py (poetry run)</li>
 <li>Tab 2: script2.py (poetry run)</li>
 <li>Tab 3: monitoring/logs (optional)</li>
 </ul>
 
-<p><strong>Panels (one tab):</strong></p>
+<p>Panels (one tab):</p>
 <ul>
 <li>Left panel: script1.py</li>
 <li>Right panel: script2.py</li>
 </ul>
 
-<h3>✅ Key Takeaways</h3>
+<h3>Key Takeaways</h3>
 
 <ul>
 <li>Use tabs for separate scripts, panels for simultaneous monitoring</li>

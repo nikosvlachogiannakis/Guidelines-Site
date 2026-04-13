@@ -86,7 +86,7 @@ stroke-width="2"
 This guide explains how to create a well-organized Python project using Poetry while adding tools that improve code quality, debugging, interactivity, and documentation.
 </p>
 
-<h2>Terminal Setup</h2>
+<h1>Terminal Setup</h1>
 
 <h3>1. Go inside the project directory</h3>
 
@@ -102,21 +102,82 @@ This guide explains how to create a well-organized Python project using Poetry w
 
 <pre><code>touch .pre-commit-config.yaml</code></pre>
 
-Open the file:
+<p>Open the file:</p>
 
 <pre><code>code .pre-commit-config.yaml</code></pre>
 
-Example configuration:
+<p>Example configuration:</p>
 
 <pre><code>repos:
 
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v5.0.0
-  hooks:
-    - id: trailing-whitespace
-    - id: end-of-file-fixer
-    - id: check-yaml
-    - id: check-toml
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-toml
+    -   id: check-added-large-files
+    -   id: check-case-conflict
+    -   id: check-executables-have-shebangs
+    -   id: check-shebang-scripts-are-executable
+    -   id: check-merge-conflict
+
+-   repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.14.0
+    hooks:
+    -   id: pretty-format-yaml
+        args: [--autofix, --indent, '4', --preserve-quotes]
+    -   id: pretty-format-toml
+        args: [--autofix]
+
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.13
+    hooks:
+    -   id: ruff-format
+        args: [--config=pyproject.toml]
+    -   id: ruff-check
+        args: [--config=pyproject.toml, --fix, --unsafe-fixes, --output-format=concise, --quiet]
+
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.20.0
+    hooks:
+    -   id: pyupgrade
+        args: [--py310-plus]
+
+-   repo: https://github.com/dannysepler/rm_unneeded_f_str
+    rev: v0.2.0
+    hooks:
+    -   id: rm-unneeded-f-str
+
+-   repo: https://github.com/numpy/numpydoc
+    rev: v1.8.0
+    hooks:
+    -   id: numpydoc-validation
+        exclude: '^(sandbox/|^docs/)'
+
+-   repo: local
+    hooks:
+    -   id: mypy
+        name: mypy
+        entry: mypy
+        args: [--show-error-codes, --explicit-package-bases, --config-file=pyproject.toml]
+        language: system
+        types: [python]
+        require_serial: true
+        exclude: ^(sandbox|docs)/
+
+-   repo: local
+    hooks:
+    -   id: pytest
+        name: pytest
+        entry: pytest
+        args: [-W, "ignore::DeprecationWarning", -s]
+        language: system
+        types: [python]
+        require_serial: true
+        exclude: ^(sandbox|docs)/
+
 </code></pre>
 
 <p>
@@ -161,13 +222,13 @@ echo "__pycache__/" >> .gitignore
 echo "*.pyc" >> .gitignore
 </code></pre>
 
-Add files:
+<p>Add files:</p>
 
 <pre><code>git add .
 git commit -m "Initial commit"
 </code></pre>
 
-Connect to GitHub:
+<p>Connect to GitHub:</p>
 
 <pre><code>git remote add origin ssh_link_of_repo
 git branch -M main
@@ -178,17 +239,17 @@ git push -u origin main
 
 <pre><code>pre-commit install</code></pre>
 
-Optional checks:
+<p>Optional checks:</p>
 
 <pre><code>ls .git/hooks/pre-commit
 cat .git/hooks/pre-commit
 </code></pre>
 
-Run hooks on all files:
+<p>Run hooks on all files:</p>
 
 <pre><code>pre-commit run --all-files</code></pre>
 
-<h2>Create Documentation with Sphinx</h2>
+<h1>Create Documentation with Sphinx</h1>
 
 <p>Sphinx is a documentation generator commonly used in Python projects.</p>
 

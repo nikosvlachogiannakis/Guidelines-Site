@@ -93,11 +93,11 @@ It also creates a clean structure for your code and simplifies sharing or publis
 <h2>Download Poetry</h2>
 
 <p>
-Download from:
+Download by following the steps in 
 <a href="https://python-poetry.org/docs/" target="_blank">Poetry Documentation</a>
 </p>
 
-<h2>Use Poetry on an Existing Project</h2>
+<h1>Option 1: Use Poetry on an Existing Project</h1>
 
 <h3>Open Terminal and Enter the Project Directory</h3>
 
@@ -137,9 +137,9 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 </code></pre>
 
-<p>This method does not create project folders. It simply adds Poetry management to an existing project.</p>
+<p>This method <span style="color:red;">DOES NOT</span> create project folders. It simply adds Poetry management to an existing project.</p>
 
-<h2>Create a New Project with Poetry</h2>
+<h1>Option 2:Create a New Project with Poetry</h1>
 
 <pre><code>poetry new my_project</code></pre>
 
@@ -153,39 +153,48 @@ build-backend = "poetry.core.masonry.api"
 ├── pyproject.toml
 </code></pre>
 
+<h1>After either Option, continue with the following steps:</h1>
+
 <h3>Enter the Project Directory</h3>
 
 <pre><code>cd my_project</code></pre>
 
-<h2>Open in VS Code</h2>
+<h3>Open in VS Code</h3>
 
 <pre><code>code .</code></pre>
 
-<h2>Install Dependencies</h2>
+<h3>Install Dependencies</h3>
 
 <pre><code>poetry install</code></pre>
 
-<h2>Activate the Environment</h2>
+<h3>Activate the Environment</h3>
 
 <pre><code>poetry shell</code></pre>
 
-<h2>Configure VS Code Interpreter</h2>
+<p>If it raises an error saying that poetry no longer has shel, or something similar, run the following commands to fix it:</p>
+
+<pre><code>eval "$(poetry env activate)"
+poetry self add poetry-plugin-shell</code></pre>
+
+<p>Now, poetry shell must work correctly.</p>
+
+<h3>Configure VS Code Interpreter</h3>
 
 <p>
 Press <strong>Ctrl + Shift + P</strong> → Select <strong>Python: Select Interpreter</strong> and choose the Poetry environment.
 </p>
 
-<h2>Add Dependencies</h2>
+<h3>Add Dependencies</h3>
 
 <p>Add a package:</p>
 
 <pre><code>poetry add requests</code></pre>
 
-<p>Add development dependency:</p>
+<p>Add a development dependency:</p>
 
 <pre><code>poetry add --dev pytest</code></pre>
 
-<h2>Virtual Environments</h2>
+<h1>Virtual Environments</h1>
 
 <p>
 A virtual environment is an isolated Python workspace where project dependencies are installed separately from the system Python.
@@ -212,7 +221,7 @@ deactivate
 Ctrl + D
 </code></pre>
 
-<h2>Virtual Environment Location</h2>
+<h1>Virtual Environment Location</h1>
 
 <p>Default directories:</p>
 
@@ -232,22 +241,21 @@ Ctrl + D
 ├── pyproject.toml
 </code></pre>
 
-<h2>Check Environment Information</h2>
+<h1>Check Environment Information</h1>
 
 <pre><code>poetry env info</code></pre>
 
-<h2>Recreate Environment</h2>
+<h1>Recreate Environment</h1>
 
 <pre><code>poetry env remove python
 poetry install
 </code></pre>
 
-<h2>Typical Workflow</h2>
+<h1>Typical Workflow</h1>
 
 <pre><code>cd my_project
 poetry shell
 code .
-pytest
 python main.py
 poetry add requests
 exit

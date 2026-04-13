@@ -86,41 +86,41 @@ stroke-width="2"
 
 <div class="topic-content">
 
-<h2>Option 1. Create a repo on GitHub and clone it locally</h2>
+<h1>Option 1. Create a repo on GitHub and clone it locally</h1>
 
 <ul>
-<li>Create a Repository on GitHub (either public or private) <span style="color:lime">with a README.md file</span></li>
+<li>Create a Repository on GitHub (either public or private) <span style="color:lime">WITH a README.md file</span></li>
 <li>Go to the path where you want to have your project:</li>
 </ul>
 
 <pre><code>cd path</code></pre>
 
 <ul>
-<li>Copy the link of the SSH key (ssh_key) from your repository in GitHub and write the following in terminal:</li>
+<li>Copy the link of the SSH key (ssh_key) from your repository in GitHub and run the following in terminal:</li>
 </ul>
 
 <pre><code>git clone ssh_key</code></pre>
 
 <ul>
-<li>You can open the file we cloned in VS Code and work on it.</li>
+<li>You can open the file you cloned in VS Code (or any other editor of your choice) and work on it.</li>
 </ul>
 
-<hr>
+<hr style="margin-top: 25px;">
 
-<h2>Option 2. Create a File locally and push to GitHub</h2>
+<h1>Option 2. Create a File locally and push to GitHub</h1>
 
 <ul>
 
 <li>
 Go to GitHub and create a repo. Name it the same as your local repo and
-<span style="color:red">do NOT create a README.md</span>
-(you already have one locally). You want your repo to be
+<span style="color:red">DO NOT create a README.md</span>
+(you must have one locally). You want your repo to be
 <span style="color:cyan">completely empty</span>.
 </li>
 
-<li>Once the repo is created in GitHub, go to Code → SSH and copy the repo SSH link.</li>
+<li>Once the repo is created in GitHub, go to Code → SSH and copy the repos' SSH link.</li>
 
-<li>Locally, on your cmd/bash do:</li>
+<li>Locally, on your cmd/bash run <span style="color:lime">ALL</span> the following commands:</li>
 
 </ul>
 
@@ -130,19 +130,19 @@ Go to GitHub and create a repo. Name it the same as your local repo and
 <br>
 <pre><code>git commit -m "Initial commit"</code></pre>
 <br>
-<pre><code>git remote add origin ssh_link-you-copied</code></pre>
+<pre><code>git remote add origin ssh-link-you-copied</code></pre>
 <br>
 <pre><code>git branch -M main</code></pre>
 <br>
 <pre><code>git push -u origin main</code></pre>
 
 <p>
-Your commits should be pushed to GitHub, and your local repo will be connected to the GitHub repo.
+Now, your commits are pushed to GitHub, and your local folder is connected to the GitHub repo.
 </p>
 
-<hr>
+<hr style="margin-top: 25px;">
 
-<h2>Option 3. Using GitHub CLI (gh)</h2>
+<h1>Option 3. Using GitHub CLI (gh)</h1>
 
 <p>
 This option uses <span style="color:cyan">HTTPS protocol</span> instead of SSH.
@@ -152,14 +152,13 @@ This option uses <span style="color:cyan">HTTPS protocol</span> instead of SSH.
 
 <li>
 Install
-<a href="https://github.com/cli" target="_blank">GitHub CLI</a>.
-After successful installation of <code>gh</code> (if you install shell repo
-<code>gh</code> will be installed too), it asks for a token.
-Follow the link and create a token with the proposed permissions.
+<a href="https://github.com/cli/cli" target="_blank">GitHub CLI</a>.
+After successful installation of <code>gh</code>, it will ask for a token.
+Follow the <a href="https://github.com/settings/tokens">link</a> and create a token with the proposed permissions.
 After this action, you can use <code>gh</code> to do things in GitHub.
 </li>
 
-<li>Connect it to your GitHub with:</li>
+<li>Connect it to your GitHub by running in terminal:</li>
 
 </ul>
 
@@ -167,7 +166,7 @@ After this action, you can use <code>gh</code> to do things in GitHub.
 
 <p>and follow the prompts.</p>
 
-<p>To create a new public repo in the current folder, do:</p>
+<p>To create a new public repo in the current folder, run:</p>
 
 <pre><code>git init</code></pre>
 <br>
@@ -185,11 +184,11 @@ After this action, you can use <code>gh</code> to do things in GitHub.
 
 <pre><code>gh repo list</code></pre>
 
-<hr>
+<hr style="margin-top: 25px; border: 1px dashed white;">
 
-<h2>Important Note</h2>
+<h2>Important Note for GitHub CLI</h2>
 
-<h4>Token is used for gh, GitHub's CLI</h4>
+<h4>Token is used for gh (GitHub's CLI).</h4>
 
 <p>
 If that token <span style="color:red">expires</span> you need to run the following
@@ -243,12 +242,6 @@ to make sure the token is updated.
 <p>
 Then it will say that you are logged in as <code>account_name</code> or something similar.
 </p>
-
-<div class="tags">
-<span class="tag">#GitHub</span>
-<span class="tag">#Git</span>
-<span class="tag">#CLI</span>
-</div>
 
 </div>
 
