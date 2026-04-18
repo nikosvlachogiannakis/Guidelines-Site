@@ -53,6 +53,7 @@
         <li><a href="../index.html#topics" class="nav-link">Topics</a></li>
         <li><a href="../index.html#sites" class="nav-link">Websites</a></li>
         <li><a href="../index.html#cheatsheets" class="nav-link">Cheatsheets</a></li>
+        <li><a href="../index.html#books" class="nav-link">Books</a></li>
         <li><a href="../index.html#about" class="nav-link">About</a></li>
         </ul>
     <div class="menu-toggle" id="menuToggle">
@@ -68,39 +69,9 @@
 
 <h1 class="section-title">Pandas Cheatsheet</h1>
 
-<!-- <div class="pdf-clean">
+<div class="pdf-clean">
   <iframe src="../images/Pandas_Cheat_Sheet.pdf#toolbar=0"></iframe>
-</div> -->
-
-<div id="pdf-viewer"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
-<script>
-const url = '../images/Pandas_Cheat_Sheet.pdf';
-
-pdfjsLib.getDocument(url).promise.then(pdf => {
-  const container = document.getElementById('pdf-viewer');
-
-  for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-    pdf.getPage(pageNum).then(page => {
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-
-      const viewport = page.getViewport({ scale: 1.3 });
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-
-      page.render({
-        canvasContext: context,
-        viewport: viewport
-      });
-
-      container.appendChild(canvas);
-    });
-  }
-});
-</script>
+</div>
 
 <div class="pdf-actions">
   <a href="../images/Pandas_Cheat_Sheet.pdf" download class="pdf-btn">Download</a>
@@ -108,6 +79,30 @@ pdfjsLib.getDocument(url).promise.then(pdf => {
 
 </section>
 </main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-content">
+
+    <p class="copyright">
+      Developer Guidelines Documentation
+    </p>
+
+    <div class="footer-links">
+      <a href="https://github.com/nikosvlachogiannakis" target="_blank">
+        <img src="../images/logos/github.png" alt="GitHub" style="width: 32px; height: 32px;">
+      </a>
+
+      <a href="https://www.linkedin.com/in/nvlachogiannakis/" target="_blank">
+        <img src="../images/logos/linkedin.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+      </a>
+    </div>
+
+  </div>
+
+</footer>
 
 <script src="../script.js"></script>
 </body>
