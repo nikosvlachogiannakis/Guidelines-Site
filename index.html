@@ -75,7 +75,7 @@
           <li><a href="#topics" class="nav-link">Topics</a></li>
           <li><a href="#sites" class="nav-link">Websites</a></li>
           <li><a href="#cheatsheets" class="nav-link">Cheatsheets</a></li>
-          <li><a href="#books" class="nav-link">Books</a></li>
+          <li><a href="#books" class="nav-link" onclick="handleBooksClick(event)">Books</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
         </ul>
 
@@ -435,7 +435,24 @@
     <br><br>
 
     <!-- BOOKS -->
-    <section class="features" id="books" style="padding: 1%;">
+    
+    <!-- PASSWORD MODAL -->
+    <div id="passwordModal" class="modal">
+      <div class="modal-content">
+        <h2>🔒 Enter Password</h2>
+
+        <input type="password" id="passwordInput" placeholder="Password..." />
+
+        <div class="modal-buttons">
+          <button onclick="submitPassword()">Unlock</button>
+          <button onclick="closeModal()">Cancel</button>
+        </div>
+
+        <p id="errorMsg"></p>
+      </div>
+    </div>
+    
+    <section class="features locked" id="books" style="padding: 1%;">
       <h2 class="section-title">Books (In Progress)</h2>
       <div class="topics-grid">
 

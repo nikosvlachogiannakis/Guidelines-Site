@@ -829,3 +829,32 @@ pre {
   background: rgba(0, 178, 255, 0.2);
   transition: 0.2s ease;
 } */
+
+.locked {
+  filter: blur(6px);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #0f172a;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 15% auto;
+  text-align: center;
+}

@@ -292,3 +292,70 @@ setInterval(() => {
 ================================ */
 
 createParticles();
+
+/* ===============================
+   PASSWORD
+================================ */
+
+let isUnlocked = false;
+const BOOKS_PASSWORD = "mypassword";
+
+// Check session on page load
+window.addEventListener("load", function () {
+  const unlocked = sessionStorage.getItem("booksUnlocked");
+
+  if (unlocked === "true") {
+    unlockBooks();
+  }
+});
+
+// Open modal
+function openPasswordModal() {
+  document.getElementById("passwordModal").style.display = "block";
+  document.getElementById("errorMsg").textContent = "";
+  setTimeout(() => {
+    document.getElementById("passwordInput").focus();
+  }, 100);
+}
+
+// Close modal
+function closeModal() {
+  document.getElementById("passwordModal").style.display = "none";
+  document.getElementById("passwordInput").value = "";
+}
+
+// Submit password
+function submitPassword() {
+  const input = document.getElementById("passwordInput").value;
+
+  if (input === BOOKS_PASSWORD) {
+    sessionStorage.setItem("booksUnlocked", "true");
+    unlockBooks();
+    closeModal();
+  } else {
+    document.getElementById("errorMsg").textContent = "Wrong password";
+  }
+}
+
+// Unlock UI
+function unlockBooks() {
+  isUnlocked = true;
+
+  const section = document.getElementById("books");
+  section.classList.remove("locked");
+
+  sessionStorage.setItem("booksUnlocked", "true");
+
+  section.scrollIntoView({ behavior: "smooth" });
+}
+
+// FOR THE NAVBAR
+
+function handleBooksClick(event) {
+  const unlocked = sessionStorage.getItem("booksUnlocked");
+
+  if (unlocked !== "true") {
+    event.preventDefault();
+    openPasswordModal();
+  }
+}
