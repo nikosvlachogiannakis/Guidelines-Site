@@ -331,7 +331,7 @@ function submitInlinePassword() {
   if (input === BOOKS_PASSWORD) {
     unlockBooks();
   } else {
-    document.getElementById("inlineErrorMsg").innerHTML = "<span style='color:red'>Wrong password</span><br><span style='opacity:0.7;font-size:0.9em'>Hint: Ask the owner</span>";
+    document.getElementById("inlineErrorMsg").innerHTML = "<span style='color:red'>Wrong password</span><br><span style='opacity:0.7; font-size:0.9em; color:lime;'>Hint: Ask the owner</span>";
   }
 }
 
@@ -360,3 +360,11 @@ function handleBooksClick(event) {
     openPasswordModal();
   }
 }
+
+document.getElementById("inlinePasswordInput").focus();
+
+document.getElementById("inlinePasswordInput").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    submitInlinePassword();
+  }
+});
