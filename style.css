@@ -830,31 +830,61 @@ pre {
   transition: 0.2s ease;
 } */
 
-.locked {
+/* blur ONLY content */
+.locked-content {
   filter: blur(6px);
   pointer-events: none;
   user-select: none;
   opacity: 0.6;
-  transition: 0.3s;
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
+/* overlay stays sharp */
+.books-lock-overlay {
+  position: absolute;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.6);
+  z-index: 10;
 }
 
-.modal-content {
+.lock-box {
   background: #0f172a;
-  color: white;
-  padding: 25px;
-  border-radius: 10px;
-  width: 300px;
-  margin: 15% auto;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+
+.lock-box input {
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+}
+
+.lock-box button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #ff0000, #1900ff);
+  color: white;
+  cursor: pointer;
+}
+#booksContent {
+  position: relative;  /* 🔥 REQUIRED */
+}
+
+#errorMsg {
+  white-space: pre-line;
 }

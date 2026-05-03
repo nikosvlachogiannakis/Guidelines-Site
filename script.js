@@ -298,7 +298,7 @@ createParticles();
 ================================ */
 
 let isUnlocked = false;
-const BOOKS_PASSWORD = "mypassword";
+const BOOKS_PASSWORD = "610";
 
 // Check session on page load
 window.addEventListener("load", function () {
@@ -325,15 +325,13 @@ function closeModal() {
 }
 
 // Submit password
-function submitPassword() {
-  const input = document.getElementById("passwordInput").value;
+function submitInlinePassword() {
+  const input = document.getElementById("inlinePasswordInput").value;
 
   if (input === BOOKS_PASSWORD) {
-    sessionStorage.setItem("booksUnlocked", "true");
     unlockBooks();
-    closeModal();
   } else {
-    document.getElementById("errorMsg").textContent = "Wrong password";
+    document.getElementById("inlineErrorMsg").innerHTML = "<span style='color:red'>Wrong password</span><br><span style='opacity:0.7;font-size:0.9em'>Hint: Ask the owner</span>";
   }
 }
 
@@ -341,12 +339,15 @@ function submitPassword() {
 function unlockBooks() {
   isUnlocked = true;
 
-  const section = document.getElementById("books");
-  section.classList.remove("locked");
+  const content = document.getElementById("booksContent");
+  content.classList.remove("locked-content");
 
   sessionStorage.setItem("booksUnlocked", "true");
 
-  section.scrollIntoView({ behavior: "smooth" });
+  const overlay = document.getElementById("booksLockOverlay");
+  if (overlay) overlay.style.display = "none";
+
+  document.getElementById("books").scrollIntoView({ behavior: "smooth" });
 }
 
 // FOR THE NAVBAR

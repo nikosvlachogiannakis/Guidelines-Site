@@ -75,7 +75,7 @@
           <li><a href="#topics" class="nav-link">Topics</a></li>
           <li><a href="#sites" class="nav-link">Websites</a></li>
           <li><a href="#cheatsheets" class="nav-link">Cheatsheets</a></li>
-          <li><a href="#books" class="nav-link" onclick="handleBooksClick(event)">Books</a></li>
+          <li><a href="#books" class="nav-link">Books</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
         </ul>
 
@@ -434,92 +434,92 @@
 
     <br><br>
 
-    <!-- BOOKS -->
-    
-    <!-- PASSWORD MODAL -->
-    <div id="passwordModal" class="modal">
-      <div class="modal-content">
-        <h2>🔒 Enter Password</h2>
+    <!-- BOOKS -->    
+    <section id="books" style="padding: 1%; position: relative;">
 
-        <input type="password" id="passwordInput" placeholder="Password..." />
+      <!-- BLURRED CONTENT ONLY -->
+      <div id="booksContent" class="locked-content">
+        
+        <h2 class="section-title">Books (In Progress)</h2>
 
-        <div class="modal-buttons">
-          <button onclick="submitPassword()">Unlock</button>
-          <button onclick="closeModal()">Cancel</button>
+        <div class="topics-grid">
+
+          <a class="topic-card" href="books/deep_learning.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/keras.png">
+              <h3 class="topic-title">Deep Learning</h3>
+            </div>
+          </a>
+
+          <a class="topic-card" href="books/machine_learning.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/tensorflow.png">
+              <h3 class="topic-title">Machine Learning</h3>
+            </div>
+          </a>
+
+          <a class="topic-card" href="books/image_analysis.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/image_analysis.png">
+              <h3 class="topic-title">Image Analysis</h3>
+            </div>
+          </a>
+
+          <a class="topic-card" href="books/optimization.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/optimization.png">
+              <h3 class="topic-title">Optimization</h3>
+            </div>
+          </a>
+
+          <a class="topic-card" href="books/python.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/python.png">
+              <h3 class="topic-title">Python</h3>
+            </div>
+          </a>
+
+          <a class="topic-card" href="books/numerical_algorithms.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/calculator.png">
+              <h3 class="topic-title">Numerical Algorithms</h3>
+            </div>
+          </a>
+
+          <a class="topic-card" href="books/scientific_machine_learning.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/scient_machine_learning.png">
+              <h3 class="topic-title">Scientific Machine Learning</h3>
+            </div>
+          </a>
+
+          <a class="topic-card" href="books/mathematical_computational_statistics.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/chart.png">
+              <h3 class="topic-title">Mathematical Computational Statistics</h3>
+            </div>
+          </a>
+
+          <a class="topic-card" href="books/writing_tips.html">
+            <div class="topic-header">
+              <img class="topic-icon" src="images/logos/writing.png">
+              <h3 class="topic-title">Writing Tips</h3>
+            </div>
+          </a>
+
         </div>
-
-        <p id="errorMsg"></p>
       </div>
-    </div>
-    
-    <section class="features locked" id="books" style="padding: 1%;">
-      <h2 class="section-title">Books (In Progress)</h2>
-      <div class="topics-grid">
 
-        <a class="topic-card" href="books/deep_learning.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/keras.png">
-            <h3 class="topic-title">Deep Learning</h3>
-          </div>
-        </a>
-
-        <a class="topic-card" href="books/machine_learning.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/tensorflow.png">
-            <h3 class="topic-title">Machine Learning</h3>
-          </div>
-        </a>
-
-        <a class="topic-card" href="books/image_analysis.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/image_analysis.png">
-            <h3 class="topic-title">Image Analysis</h3>
-          </div>
-        </a>
-
-        <a class="topic-card" href="books/optimization.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/optimization.png">
-            <h3 class="topic-title">Optimization</h3>
-          </div>
-        </a>
-
-        <a class="topic-card" href="books/python.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/python.png">
-            <h3 class="topic-title">Python</h3>
-          </div>
-        </a>
-
-        <a class="topic-card" href="books/numerical_algorithms.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/calculator.png">
-            <h3 class="topic-title">Numerical Algorithms</h3>
-          </div>
-        </a>
-
-        <a class="topic-card" href="books/scientific_machine_learning.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/scient_machine_learning.png">
-            <h3 class="topic-title">Scientific Machine Learning</h3>
-          </div>
-        </a>
-
-        <a class="topic-card" href="books/mathematical_computational_statistics.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/chart.png">
-            <h3 class="topic-title">Mathematical Computational Statistics</h3>
-          </div>
-        </a>
-
-        <a class="topic-card" href="books/writing_tips.html">
-          <div class="topic-header">
-            <img class="topic-icon" src="images/logos/writing.png">
-            <h3 class="topic-title">Writing Tips</h3>
-          </div>
-        </a>
-
+      <!-- OVERLAY (OUTSIDE blur) -->
+      <div id="booksLockOverlay" class="books-lock-overlay">
+        <div class="lock-box">
+          <h2>🔒 Locked Content</h2>
+          <input type="password" id="inlinePasswordInput" placeholder="Enter password..." />
+          <button onclick="submitInlinePassword()">Unlock</button>
+          <p id="inlineErrorMsg"></p>
+        </div>
       </div>
+
     </section>
 
 
