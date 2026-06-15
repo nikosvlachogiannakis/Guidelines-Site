@@ -390,3 +390,30 @@ if (inlinePasswordInput) {
     }
   });
 }
+
+/* ===============================
+   THEME TOGGLE
+================================ */
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+
+  // Update all theme-aware icons
+  document.querySelectorAll('img[data-dark-src]').forEach(img => {
+    img.src = theme === 'dark' ? img.dataset.darkSrc : img.dataset.lightSrc;
+  });
+}
+
+(function () {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+
+  // Apply saved preference immediately
+  const saved = localStorage.getItem('theme') || 'light';
+  applyTheme(saved);
+
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    applyTheme(isDark ? 'light' : 'dark');
+  });
+})();
