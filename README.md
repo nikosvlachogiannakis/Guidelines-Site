@@ -79,8 +79,13 @@ Created and maintained by:
 
 ### Nick Vlachogiannakis
 
-* ![Github](images/logos/github.png): [https://github.com/nikosvlachogiannakis](https://github.com/nikosvlachogiannakis)
-* ![LinkedIn](images/logos/linkedin.png): [https://www.linkedin.com/in/nikosvlachogiannakis](https://www.linkedin.com/in/nvlachogiannakis)
+<a href="https://github.com/nikosvlachogiannakis">
+  <img src="images/logos/github-dark.png" alt="GitHub" width="24" height="24"/>
+</a>
+
+<a href="https://www.linkedin.com/in/nvlachogiannakis">
+  <img src="images/logos/linkedin.png" alt="GitHub" width="24" height="24"/>
+</a>
 
 ---
 
