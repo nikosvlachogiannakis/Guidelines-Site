@@ -2,6 +2,8 @@
 
 A modern, interactive documentation website that provides structured guidelines, tools, and resources for developers. This project is designed to centralize essential workflows, tools, and references used in everyday development.
 
+## Located [here](https://nikosvlachogiannakis.github.io/Guidelines-Site/index.html)
+
 ---
 
 ## 🚀 Overview
@@ -75,10 +77,10 @@ This project can be used as:
 
 Created and maintained by:
 
-**Nikos Vlachogiannakis**
+### Nick Vlachogiannakis
 
-* GitHub: [https://github.com/nikosvlachogiannakis](https://github.com/nikosvlachogiannakis)
-* LinkedIn: [https://www.linkedin.com/in/nikosvlachogiannakis](https://www.linkedin.com/in/nikosvlachogiannakis)
+* ![Github](images/logos/github.png): [https://github.com/nikosvlachogiannakis](https://github.com/nikosvlachogiannakis)
+* ![LinkedIn](images/logos/linkedin.png): [https://www.linkedin.com/in/nikosvlachogiannakis](https://www.linkedin.com/in/nvlachogiannakis)
 
 ---
 
