@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Guidelines</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='logoGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232A8C82'/%3E%3Cstop offset='100%25' style='stop-color:%231A1B1E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='20,2 38,14 38,26 20,38 2,26 2,14' fill='none' stroke='url(%23logoGradient)' stroke-width='2'/%3E%3Ccircle cx='20' cy='20' r='3' fill='url(%23logoGradient)'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3Cdefs%3E%3ClinearGradient%20id='logoGradient'%20x1='0%25'%20y1='0%25'%20x2='100%25'%20y2='100%25'%3E%3Cstop%20offset='0%25'%20style='stop-color:%232A8C82'/%3E%3Cstop%20offset='100%25'%20style='stop-color:%231A1B1E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon%20points='20,2%2038,14%2038,26%2020,38%202,26%202,14'%20fill='none'%20stroke='url(%23logoGradient)'%20stroke-width='2'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='3'%20fill='url(%23logoGradient)'/%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 
@@ -32,8 +32,8 @@
 
   <body>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <div class="toggle-track">
-        <div class="toggle-thumb">
+      <span class="toggle-track">
+        <span class="toggle-thumb">
           <!-- Sun -->
           <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"/>
@@ -50,8 +50,8 @@
           <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
-        </div>
-      </div>
+        </span>
+      </span>
     </button>
 
     <!-- Animated Background -->
@@ -133,7 +133,7 @@
 
         <a class="topic-card" href="doc_topics/1.remote.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/remote_connection.png">
+            <img class="topic-icon" src="images/logos/remote_connection.png" alt="Remote Connection">
             <h3 class="topic-title">Remote Connection</h3>
           </div>
           <p>Connecting to servers and remote environments.</p>
@@ -149,7 +149,7 @@
 
         <a class="topic-card" href="doc_topics/3.repopush.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/git.png">
+            <img class="topic-icon" src="images/logos/git.png" alt="Git Push">
             <h3 class="topic-title">Git Push</h3>
           </div>
           <p>Pushing code to GitHub.</p>
@@ -157,7 +157,7 @@
 
         <a class="topic-card" href="doc_topics/4.pull.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/git.png">
+            <img class="topic-icon" src="images/logos/git.png" alt="Git Pull">
             <h3 class="topic-title">Git Pull</h3>
           </div>
           <p>Updating local repositories from remote.</p>
@@ -165,7 +165,7 @@
 
         <a class="topic-card" href="doc_topics/5.poetry.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/poetry.png">
+            <img class="topic-icon" src="images/logos/poetry.png" alt="Poetry">
             <h3 class="topic-title">Poetry</h3>
           </div>
           <p>Managing Python dependencies.</p>
@@ -173,7 +173,7 @@
 
         <a class="topic-card" href="doc_topics/6.uv.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/uv.png">
+            <img class="topic-icon" src="images/logos/uv.png" alt="UV">
             <h3 class="topic-title">UV</h3>
           </div>
           <p>Fast modern Python package manager.</p>
@@ -181,7 +181,7 @@
 
         <a class="topic-card" href="doc_topics/7.workflow.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/workflow.png">
+            <img class="topic-icon" src="images/logos/workflow.png" alt="Advanced Workflow">
             <h3 class="topic-title">Advanced Workflow</h3>
           </div>
           <p>Improved development workflows.</p>
@@ -189,7 +189,7 @@
 
         <a class="topic-card" href="doc_topics/8.reveal.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/reveal.png">
+            <img class="topic-icon" src="images/logos/reveal.png" alt="Reveal.js">
             <h3 class="topic-title">Reveal.js</h3>
           </div>
           <p>Presentation creation with Reveal.js.</p>
@@ -197,7 +197,7 @@
 
         <a class="topic-card" href="doc_topics/9.lazygit.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/lazygit.png">
+            <img class="topic-icon" src="images/logos/lazygit.png" alt="LazyGit">
             <h3 class="topic-title">LazyGit</h3>
           </div>
           <p>Terminal UI for Git operations.</p>
@@ -205,7 +205,7 @@
 
         <a class="topic-card" href="doc_topics/10.pyenv.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/pyenv.png">
+            <img class="topic-icon" src="images/logos/pyenv.png" alt="PYENV">
             <h3 class="topic-title">PYENV</h3>
           </div>
           <p>Managing multiple Python versions.</p>
@@ -213,7 +213,7 @@
 
         <a class="topic-card" href="doc_topics/11.zellij.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/zellij.png">
+            <img class="topic-icon" src="images/logos/zellij.png" alt="Zellij">
             <h3 class="topic-title">Zellij</h3>
           </div>
           <p>Terminal workspace and session manager.</p>
@@ -221,7 +221,7 @@
 
         <a class="topic-card" href="doc_topics/12.docker.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/faviconV2.png">
+            <img class="topic-icon" src="images/logos/faviconV2.png" alt="Docker">
             <h3 class="topic-title">Docker</h3>
           </div>
           <p>Package and run applications in containers.</p>
@@ -229,7 +229,7 @@
 
         <a class="topic-card" href="doc_topics/13.cookiecutter.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/cookie.png">
+            <img class="topic-icon" src="images/logos/cookie.png" alt="Cookiecutter">
             <h3 class="topic-title">Cookiecutter</h3>
           </div>
           <p>Generating projects from templates in one command.</p>
@@ -247,7 +247,7 @@
 
         <a class="topic-card" href="sites/ai.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/chatgpt.png">
+            <img class="topic-icon" src="images/logos/chatgpt.png" alt="Artificial Intelligence">
             <h3 class="topic-title">Artificial Intelligence</h3>
           </div>
           <p>AI tools</p>
@@ -255,7 +255,7 @@
 
         <a class="topic-card" href="sites/cheatsheets.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/cheats.png">
+            <img class="topic-icon" src="images/logos/cheats.png" alt="Cheatsheets">
             <h3 class="topic-title">Cheatsheets</h3>
           </div>
           <p>Cheatsheets</p>
@@ -263,7 +263,7 @@
 
         <a class="topic-card" href="sites/pyhton.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/python.png">
+            <img class="topic-icon" src="images/logos/python.png" alt="Python">
             <h3 class="topic-title">Python</h3>
           </div>
           <p>Python tools and workflows</p>
@@ -271,7 +271,7 @@
 
         <a class="topic-card" href="sites/interview.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/interview.png">
+            <img class="topic-icon" src="images/logos/interview.png" alt="Interview">
             <h3 class="topic-title">Interview</h3>
           </div>
           <p>Interview preparation and tools</p>
@@ -279,7 +279,7 @@
 
         <a class="topic-card" href="sites/online_courses.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/courses.png">
+            <img class="topic-icon" src="images/logos/courses.png" alt="Online Courses">
             <h3 class="topic-title">Online Courses</h3>
           </div>
           <p>Sites with online courses</p>
@@ -295,7 +295,7 @@
 
         <a class="topic-card" href="sites/latex.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/latex.png">
+            <img class="topic-icon" src="images/logos/latex.png" alt="LaTeX">
             <h3 class="topic-title">LaTeX</h3>
           </div>
           <p>Sites to write LaTeX</p>
@@ -303,7 +303,7 @@
 
         <a class="topic-card" href="sites/obsidian.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/obsidian.jpeg">
+            <img class="topic-icon" src="images/logos/obsidian.jpeg" alt="Obsidian">
             <h3 class="topic-title">Obsidian</h3>
           </div>
           <p>Note taking tool</p>
@@ -311,7 +311,7 @@
 
         <a class="topic-card" href="sites/document_conversion.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/doc_conversion.png">
+            <img class="topic-icon" src="images/logos/doc_conversion.png" alt="Document Conversion">
             <h3 class="topic-title">Document Conversion</h3>
           </div>
           <p>Convert documents to other types</p>
@@ -319,7 +319,7 @@
 
         <a class="topic-card" href="sites/translate.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/translate.png">
+            <img class="topic-icon" src="images/logos/translate.png" alt="Translate">
             <h3 class="topic-title">Translate</h3>
           </div>
           <p>Sites for translation</p>
@@ -327,7 +327,7 @@
 
         <a class="topic-card" href="sites/statistics.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/stats.png">
+            <img class="topic-icon" src="images/logos/stats.png" alt="Statistics">
             <h3 class="topic-title">Statistics</h3>
           </div>
           <p>Sites for statistics & probability</p>
@@ -335,7 +335,7 @@
 
         <a class="topic-card" href="sites/remote_ssh.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/remote.png">
+            <img class="topic-icon" src="images/logos/remote.png" alt="Remote SSH">
             <h3 class="topic-title">Remote SSH</h3>
           </div>
           <p>Remote machine connection</p>
@@ -343,7 +343,7 @@
 
         <a class="topic-card" href="sites/secure_password.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/bitwarden.png">
+            <img class="topic-icon" src="images/logos/bitwarden.png" alt="Security">
             <h3 class="topic-title">Security</h3>
           </div>
           <p>Save Passwords Safely & Check mail leaks</p>
@@ -351,7 +351,7 @@
 
         <a class="topic-card" href="sites/extra.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/extra.png">
+            <img class="topic-icon" src="images/logos/extra.png" alt="Extra">
             <h3 class="topic-title">Extra</h3>
           </div>
           <p>Extra sites & tools</p>
@@ -377,7 +377,7 @@
 
         <a class="topic-card" href="cheatsheets/git.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/git.png">
+            <img class="topic-icon" src="images/logos/git.png" alt="Git">
             <h3 class="topic-title">Git</h3>
           </div>
           <p>Useful Git commands</p>
@@ -385,7 +385,7 @@
 
         <a class="topic-card" href="cheatsheets/data_viz.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/dataviz.png">
+            <img class="topic-icon" src="images/logos/dataviz.png" alt="Data Visualizations">
             <h3 class="topic-title">Data Visualizations</h3>
           </div>
           <p>Data Visualization Options</p>
@@ -393,7 +393,7 @@
 
         <a class="topic-card" href="cheatsheets/tmux.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/tmux.svg">
+            <img class="topic-icon" src="images/logos/tmux.svg" alt="TMUX">
             <h3 class="topic-title">TMUX</h3>
           </div>
           <p>tmux useful commands</p>
@@ -401,7 +401,7 @@
 
         <a class="topic-card" href="cheatsheets/docker.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/faviconV2.png">
+            <img class="topic-icon" src="images/logos/faviconV2.png" alt="Docker">
             <h3 class="topic-title">Docker</h3>
           </div>
           <p>What is Docker?</p>
@@ -417,7 +417,7 @@
 
         <a class="topic-card" href="cheatsheets/machine_learning.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/tensorflow.png">
+            <img class="topic-icon" src="images/logos/tensorflow.png" alt="Machine Learning">
             <h3 class="topic-title">Machine Learning</h3>
           </div>
           <p>Machine Learning Cheatsheet</p>
@@ -425,7 +425,7 @@
 
         <a class="topic-card" href="cheatsheets/pandas.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/pandas.png">
+            <img class="topic-icon" src="images/logos/pandas.png" alt="Pandas">
             <h3 class="topic-title">Pandas</h3>
           </div>
           <p>Pandas Cheatsheet</p>
@@ -433,7 +433,7 @@
 
         <a class="topic-card" href="cheatsheets/regression.html">
           <div class="topic-header">
-            <img class="topic-icon" src="images/logos/statistics.jpeg">
+            <img class="topic-icon" src="images/logos/statistics.jpeg" alt="Regression">
             <h3 class="topic-title">Regression</h3>
           </div>
           <p>Regression Cheatsheet</p>
@@ -472,14 +472,14 @@
 
           <a class="topic-card" href="books/deep_learning.html">
             <div class="topic-header">
-              <img class="topic-icon" src="images/logos/keras.png">
+              <img class="topic-icon" src="images/logos/keras.png" alt="Deep Learning">
               <h3 class="topic-title">Deep Learning</h3>
             </div>
           </a>
 
           <a class="topic-card" href="books/machine_learning.html">
             <div class="topic-header">
-              <img class="topic-icon" src="images/logos/tensorflow.png">
+              <img class="topic-icon" src="images/logos/tensorflow.png" alt="Machine Learning">
               <h3 class="topic-title">Machine Learning</h3>
             </div>
           </a>
@@ -500,7 +500,7 @@
 
           <a class="topic-card" href="books/python.html">
             <div class="topic-header">
-              <img class="topic-icon" src="images/logos/python.png">
+              <img class="topic-icon" src="images/logos/python.png" alt="Python">
               <h3 class="topic-title">Python</h3>
             </div>
           </a>
@@ -540,7 +540,7 @@
       <div id="booksLockOverlay" class="books-lock-overlay">
         <div class="lock-box">
           <h2>🔒 Locked Content</h2>
-          <input type="password" id="inlinePasswordInput" placeholder="Enter password..." />
+          <input type="password" id="inlinePasswordInput" placeholder="Enter password...">
           <button onclick="submitInlinePassword()">Unlock</button>
           <p id="inlineErrorMsg"></p>
         </div>
