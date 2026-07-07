@@ -56,7 +56,6 @@ body {
   min-height: 100vh;
   position: relative;
   transition: background var(--transition), color var(--transition);
-
 }
 
 a {
@@ -398,6 +397,8 @@ transition:0.3s;
 footer {
   padding: 40px 10%;
   border-top: 1px solid var(--line);
+  position: sticky;
+  top: 100vh;
 }
 
 .footer-content {
@@ -693,11 +694,12 @@ code {
 
 .book-card:hover img { transform: scale(1.1); }
 
-.book-image { position: relative; width: 100%; overflow: hidden; }
+.book-image { position: relative; width: 100%; aspect-ratio: 3 / 4; overflow: hidden; }
 
 .book-image img {
   width: 100%; height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: top center;
   background: var(--console-bg);
   transition: transform var(--transition);
 }
